@@ -16,7 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 
 public class MainActivity extends AppCompatActivity {
-   
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

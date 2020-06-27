@@ -16,8 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Learning1" />
-        <activity android:name=".Learning" />
+        <activity android:name=".Learning"/>
+        <activity android:name=".Modules"/>
     </application>
 
 </manifest>

@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements MainActivityAdapt
         mRecyclerView = findViewById(R.id.mainActivityView);
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
-        mAdapter = new MainActivityAdapter(mList, this);
+        mAdapter = new MainActivityAdapter(mList, this );
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
         MainActivityAdapter.OnMainAdapterListener listener = new MainActivityAdapter.OnMainAdapterListener() {
@@ -57,13 +57,21 @@ public class MainActivity extends AppCompatActivity implements MainActivityAdapt
 
         };
 
+
+
     }
 
 
     @Override
     public void OnMainAdapterClick(int position) {
         Intent intent = new Intent(this, Learning.class);
+        intent.putExtra(Learning.ARG_NAME, position);
+
         startActivity(intent);
+
+
+
+
 
 
     }

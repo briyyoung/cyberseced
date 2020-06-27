@@ -23,8 +23,9 @@ public class MainActivityAdapter extends RecyclerView.Adapter<MainActivityAdapte
 
     public MainActivityAdapter(ArrayList<Modules> mList, OnMainAdapterListener onMainAdapterListener) {
         mmList = mList;
-        this.mMainAdapterListener = onMainAdapterListener;
+       mMainAdapterListener = onMainAdapterListener;
     }
+
 
     @NonNull
     @Override

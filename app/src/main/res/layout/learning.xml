@@ -16,7 +16,7 @@
 
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/Info"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
@@ -29,7 +29,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0"
-            app:srcCompat="@drawable/social" />
+            app:srcCompat="@drawable/cyber" />
 
         <Button
             android:id="@+id/QuizButton"
@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:text="Take Quiz"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            app:layout_constraintTop_toBottomOf="@+id/Info" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

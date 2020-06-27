@@ -32,6 +32,7 @@
             android:layout_below="@+id/topicPicList"
             android:layout_centerInParent="true"
             android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
             android:fontFamily="casual"
              android:textColor="#faf4ff"
             android:textSize="18sp" />

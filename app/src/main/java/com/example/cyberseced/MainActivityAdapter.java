@@ -3,6 +3,8 @@ package com.example.cyberseced;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +18,7 @@ import java.util.ArrayList;
 public class MainActivityAdapter extends RecyclerView.Adapter<MainActivityAdapter.MainActivityViewHolder> {
     private ArrayList<Modules> mmList;
     private OnMainAdapterListener mMainAdapterListener;
+
 
 
     public MainActivityAdapter(ArrayList<Modules> mList, OnMainAdapterListener onMainAdapterListener) {
@@ -58,6 +61,7 @@ public class MainActivityAdapter extends RecyclerView.Adapter<MainActivityAdapte
           this.onMainAdapterListener = onMainAdapterListener;
             itemView.setOnClickListener(this);
 
+
         }
 
         @Override
@@ -65,6 +69,8 @@ public class MainActivityAdapter extends RecyclerView.Adapter<MainActivityAdapte
             onMainAdapterListener.OnMainAdapterClick(getAdapterPosition());
         }
     }
+
+
 
     public interface OnMainAdapterListener{
         void OnMainAdapterClick (int position);

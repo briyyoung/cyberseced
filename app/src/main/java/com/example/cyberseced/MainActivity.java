@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -45,15 +46,27 @@ public class MainActivity extends AppCompatActivity implements MainActivityAdapt
         mAdapter = new MainActivityAdapter(mList, this);
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
+        MainActivityAdapter.OnMainAdapterListener listener = new MainActivityAdapter.OnMainAdapterListener() {
+            @Override
+            public void OnMainAdapterClick(int position) {
+                OnMainAdapterClick(position);
+            }
+
+
+
+
+        };
 
     }
 
 
     @Override
     public void OnMainAdapterClick(int position) {
-        mList.get(position);
-;
-       Intent intent = new Intent(this, Learning.class);
+        Intent intent = new Intent(this, Learning.class);
         startActivity(intent);
+
+
     }
+
+
 }

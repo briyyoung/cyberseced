@@ -18,16 +18,22 @@ public class Learning extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.learning);
+
 
 
         Intent intent = getIntent();
-        module = Modules.getModules(intent.getStringExtra(ARG_NAME));
+        String moduleName = intent.getStringExtra(MainActivity.CHOICE);
 
-            System.out.println(intent.getStringExtra(ARG_NAME));
-    //    cImage = findViewById(R.id.Info);
-      //  int picture = getResources().getIdentifier("graphic_" + module.getmImage(),"drawable","com.example.cyberseced");
-     //   cImage.setImageResource(picture);
+        launchmodule(moduleName);
 
+
+
+    }
+
+    public void launchmodule (String moduleName){
+        Intent intent = new Intent(this, LearningDetail.class);
+        intent.putExtra(LearningDetail.ARG_NAME, moduleName);
+        startActivity(intent);
+        finish();
     }
 }

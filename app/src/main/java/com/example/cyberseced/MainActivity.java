@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity implements MainActivityAdapter.OnMainAdapterListener {
-    private static final String TAG ="" ;
+    public static final String CHOICE = "ggg" ;
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
@@ -48,11 +48,11 @@ public class MainActivity extends AppCompatActivity implements MainActivityAdapt
         mRecyclerView.setAdapter(mAdapter);
         MainActivityAdapter.OnMainAdapterListener listener = new MainActivityAdapter.OnMainAdapterListener() {
             @Override
-            public void OnMainAdapterClick(int position) {
-                OnMainAdapterClick(position);
+            public void OnMainAdapterClick(View view, int position) {
+                Modules modules = Modules.getModules().get(position);
+               Intent intent = new Intent(MainActivity.this, Learning.class);
+                intent.putExtra(CHOICE, modules.getName());
             }
-
-
 
 
         };
@@ -63,18 +63,16 @@ public class MainActivity extends AppCompatActivity implements MainActivityAdapt
 
 
     @Override
-    public void OnMainAdapterClick(int position) {
-        Intent intent = new Intent(this, Learning.class);
-        intent.putExtra(Learning.ARG_NAME, position);
+    public void OnMainAdapterClick(View view, int position) {
+        Modules modules = Modules.getModules().get(position);
+        Intent intent = new Intent(MainActivity.this, Learning.class);
+        intent.putExtra(CHOICE, modules.getName());
 
+     //   System.out.println(modules.getName());
         startActivity(intent);
 
-
-
-
-
-
     }
-
-
 }
+
+
+

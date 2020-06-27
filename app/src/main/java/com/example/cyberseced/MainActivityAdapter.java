@@ -20,10 +20,9 @@ public class MainActivityAdapter extends RecyclerView.Adapter<MainActivityAdapte
     private OnMainAdapterListener mMainAdapterListener;
 
 
-
     public MainActivityAdapter(ArrayList<Modules> mList, OnMainAdapterListener onMainAdapterListener) {
         mmList = mList;
-       mMainAdapterListener = onMainAdapterListener;
+        mMainAdapterListener = onMainAdapterListener;
     }
 
 
@@ -31,7 +30,7 @@ public class MainActivityAdapter extends RecyclerView.Adapter<MainActivityAdapte
     @Override
     public MainActivityViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_main_adapter, parent, false);
-       return  new MainActivityViewHolder(v,mMainAdapterListener);
+        return new MainActivityViewHolder(v, mMainAdapterListener);
 
 
     }
@@ -59,7 +58,7 @@ public class MainActivityAdapter extends RecyclerView.Adapter<MainActivityAdapte
             super(itemView);
             mIcon = itemView.findViewById(R.id.topicPicList);
             mLabel = itemView.findViewById(R.id.topicNameList);
-          this.onMainAdapterListener = onMainAdapterListener;
+            this.onMainAdapterListener = onMainAdapterListener;
             itemView.setOnClickListener(this);
 
 
@@ -67,14 +66,13 @@ public class MainActivityAdapter extends RecyclerView.Adapter<MainActivityAdapte
 
         @Override
         public void onClick(View v) {
-            onMainAdapterListener.OnMainAdapterClick(getAdapterPosition());
+            onMainAdapterListener.OnMainAdapterClick(v,getAdapterPosition());
         }
     }
 
 
-
-    public interface OnMainAdapterListener{
-        void OnMainAdapterClick (int position);
+    public interface OnMainAdapterListener {
+        void OnMainAdapterClick(View view, int position);
     }
 }
 

@@ -34,21 +34,22 @@ public class LearningDetail extends AppCompatActivity {
         Button TakeQuiz = (Button) findViewById(R.id.QuizBtn);
         Button MoreInfo = (Button) findViewById(R.id.MoreInfoBtn);
 
+
+        //change image
         MoreInfo.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
-
                 Drawable MoreInfo = getResources().getDrawable(R.drawable.graphic7);
                 cImage.setImageDrawable(MoreInfo);
-
-                Intent intent = getIntent();
-                finish();
-                startActivity(intent);
-
-               // Intent intent = new Intent(LearningDetail.this, Information.class);
-               // startActivity(intent);
             }
         });
 
 
+        //new activity
+        TakeQuiz.setOnClickListener(new Button.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(LearningDetail.this, Quiz.class);
+                startActivity(intent);
+            }
+        });
     }
 }

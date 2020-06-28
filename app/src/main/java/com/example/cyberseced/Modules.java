@@ -37,8 +37,8 @@ public class Modules {
 
     public static ArrayList<Modules> getModules(){
         ArrayList<Modules> modules = new ArrayList<>();
-        modules.add(new Modules(R.drawable.cyber, "Social Engineering Attacks"));
-        modules.add(new Modules(R.drawable.cyber, "Psychology Based Attacks"));
+        modules.add(new Modules(R.drawable.graphic1, "Social Engineering Attacks"));
+        modules.add(new Modules(R.drawable.graphic2, "Psychology Based Attacks"));
         modules.add(new Modules(R.drawable.cyber, "How to stay safe online"));
         modules.add(new Modules(R.drawable.cyber, "Work from Home: How to secure your remote/home workplace"));
         modules.add(new Modules(R.drawable.cyber, "Best practices - Passwords"));

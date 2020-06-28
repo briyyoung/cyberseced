@@ -11,8 +11,7 @@ import java.util.Arrays;
 
 public class Learning extends AppCompatActivity {
     public static final String ARG_NAME = " " ;
-    private Modules module;
-    private ImageView cImage;
+
 
 
     @Override

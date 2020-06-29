@@ -16,13 +16,13 @@ import androidx.annotation.NonNull;
 import java.util.ArrayList;
 
 public class MainActivityAdapter extends RecyclerView.Adapter<MainActivityAdapter.MainActivityViewHolder> {
-    private ArrayList<Modules> mmList;
-    private OnMainAdapterListener mMainAdapterListener;
+    private ArrayList<Modules> modulesList;
+    private RecyclerViewClickListener mListener;
 
 
-    public MainActivityAdapter(ArrayList<Modules> mList, OnMainAdapterListener onMainAdapterListener) {
-        mmList = mList;
-        mMainAdapterListener = onMainAdapterListener;
+    public MainActivityAdapter(ArrayList<Modules> modules, RecyclerViewClickListener listener) {
+        modulesList = modules;
+        mListener = listener;
     }
 
 
@@ -30,49 +30,52 @@ public class MainActivityAdapter extends RecyclerView.Adapter<MainActivityAdapte
     @Override
     public MainActivityViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_main_adapter, parent, false);
-        return new MainActivityViewHolder(v, mMainAdapterListener);
+        return new MainActivityViewHolder(v, mListener);
 
 
     }
 
     @Override
     public void onBindViewHolder(@NonNull MainActivityViewHolder holder, int position) {
-        Modules cModules = mmList.get(position);
+        Modules modules = modulesList.get(position);
+        holder.moduleName.setText(modules.getName());
 
-        holder.mIcon.setImageResource(cModules.getmImage());
-        holder.mLabel.setText(cModules.getName());
+        int icon = holder.itemView.getContext().getResources().getIdentifier("pic_" + modules.getmImage(), "drawable", "com.example.cyberseced");
+        holder.moduleIcon.setImageResource(icon);
 
     }
 
     @Override
     public int getItemCount() {
-        return mmList.size();
+        return modulesList.size();
     }
 
     public class MainActivityViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        public ImageView mIcon;
-        public TextView mLabel;
-        OnMainAdapterListener onMainAdapterListener;
+        public ImageView moduleIcon;
+        public TextView moduleName;
+        private RecyclerViewClickListener mListener;
 
-        public MainActivityViewHolder(@NonNull View itemView, OnMainAdapterListener onMainAdapterListener) {
+        public MainActivityViewHolder(@NonNull View itemView, RecyclerViewClickListener listener) {
             super(itemView);
-            mIcon = itemView.findViewById(R.id.topicPicList);
-            mLabel = itemView.findViewById(R.id.topicNameList);
-            this.onMainAdapterListener = onMainAdapterListener;
+            moduleIcon = itemView.findViewById(R.id.topicPicList);
+            moduleName = itemView.findViewById(R.id.topicNameList);
+            mListener = listener;
             itemView.setOnClickListener(this);
 
 
         }
 
         @Override
-        public void onClick(View v) {
-            onMainAdapterListener.OnMainAdapterClick(v,getAdapterPosition());
+        public void onClick(View view) {
+            mListener.onClick(view, getAdapterPosition());
         }
-    }
+            }
 
 
-    public interface OnMainAdapterListener {
-        void OnMainAdapterClick(View view, int position);
+
+
+    public interface RecyclerViewClickListener {
+        void onClick(View view, int position);
     }
 }
 

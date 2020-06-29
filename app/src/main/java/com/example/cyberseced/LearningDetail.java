@@ -27,7 +27,7 @@ public class LearningDetail extends AppCompatActivity {
 
         // add image based on name
         cImage = findViewById(R.id.Info);
-        int graphic = module.getmImage();
+        int graphic = module.getGraphic();
         cImage.setImageResource(graphic);
 
 

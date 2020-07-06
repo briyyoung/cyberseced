@@ -21,7 +21,7 @@ public class LearningHome extends AppCompatActivity {
 
 
         Intent intent = getIntent();
-        String moduleName = intent.getStringExtra(MainActivity.CHOICE);
+        String moduleName = intent.getStringExtra(LearningEntry.CHOICE);
 
         launchmodule(moduleName);
 

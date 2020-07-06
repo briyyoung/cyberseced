@@ -1,5 +1,6 @@
 package com.example.cyberseced;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -52,13 +53,20 @@ public class Signup extends AppCompatActivity {
                     return;
                 }
 
+                        //successful creation
                 firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            Log.d(TAG, "createUserWithEmail:successDSGSDGF");
+                            Toast.makeText(Signup.this, "User created", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(),MainActivity.class));
 
                         }
+                        else {
+                            Toast.makeText(Signup.this, "Error encountered", Toast.LENGTH_SHORT).show();
+
+                                                    }
+
                     }
                 });
 

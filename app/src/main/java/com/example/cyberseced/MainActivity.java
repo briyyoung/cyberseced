@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-public class MainActivity extends AppCompatActivity  {
+public class MainActivity extends AppCompatActivity {
 
 
     @Override
@@ -19,25 +19,33 @@ public class MainActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
 
-         Button button = (Button) findViewById(R.id.loginbutton);
-        button.setOnClickListener(new View.OnClickListener() {
+        Button sign = (Button) findViewById(R.id.signup);
+        sign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, Signup.class);
-                       startActivity(intent);
+                startActivity(intent);
 
 
             }
         });
 
+        Button login = (Button) findViewById(R.id.login);
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Login.class);
+                startActivity(intent);
+
+
+            }
+        });
+
+
     }
 
 
-
-
-
-
-    }
+}
 
 
 

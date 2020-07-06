@@ -23,16 +23,6 @@ public class LearningEntry extends AppCompatActivity {
 
         startRecyclerView();
 
-        Button button = (Button) findViewById(R.id.loginbutton);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(LearningEntry.this, Signup.class);
-                startActivity(intent);
-
-
-            }
-        });
 
     }
 

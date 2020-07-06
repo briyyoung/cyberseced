@@ -3,8 +3,6 @@ package com.example.cyberseced;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,12 +13,12 @@ import androidx.annotation.NonNull;
 
 import java.util.ArrayList;
 
-public class MainActivityAdapter extends RecyclerView.Adapter<MainActivityAdapter.MainActivityViewHolder> {
+public class LearningAdapter extends RecyclerView.Adapter<LearningAdapter.MainActivityViewHolder> {
     private ArrayList<Modules> modulesList;
     private RecyclerViewClickListener mListener;
 
 
-    public MainActivityAdapter(ArrayList<Modules> modules, RecyclerViewClickListener listener) {
+    public LearningAdapter(ArrayList<Modules> modules, RecyclerViewClickListener listener) {
         modulesList = modules;
         mListener = listener;
     }
@@ -29,7 +27,7 @@ public class MainActivityAdapter extends RecyclerView.Adapter<MainActivityAdapte
     @NonNull
     @Override
     public MainActivityViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_main_adapter, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.learning_adapter, parent, false);
         return new MainActivityViewHolder(v, mListener);
 
 

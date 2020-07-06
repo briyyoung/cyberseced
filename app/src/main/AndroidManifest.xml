@@ -18,10 +18,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Learning"/>
+        <activity android:name=".LearningHome"/>
         <activity android:name=".Modules"/>
         <activity android:name=".LearningDetail" />
         <activity android:name=".Signup" />
+        <activity android:name=".LearningEntry" />
     </application>
 
 </manifest>

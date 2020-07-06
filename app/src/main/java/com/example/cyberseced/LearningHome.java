@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Arrays;
 
-public class Learning extends AppCompatActivity {
+public class LearningHome extends AppCompatActivity {
     public static final String ARG_NAME = " " ;
 
 

@@ -23,6 +23,7 @@
         <activity android:name=".LearningDetail" />
         <activity android:name=".Signup" />
         <activity android:name=".LearningEntry" />
+        <activity android:name=".Login" />
     </application>
 
 </manifest>

@@ -3,10 +3,8 @@ package com.example.cyberseced;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,7 +18,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Signup extends AppCompatActivity {
-    private static final String TAG = "";
+
     TextView tname, temail, tpassword;
         Button bregister;
         FirebaseAuth firebaseAuth;
@@ -30,10 +28,10 @@ public class Signup extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signup);
 
-        tname = findViewById(R.id.name);
-        temail = findViewById(R.id.email);
-        tpassword = findViewById(R.id.password);
-        bregister = findViewById(R.id.rego);
+        tname = findViewById(R.id.signupname);
+        temail = findViewById(R.id.signupemail);
+        tpassword = findViewById(R.id.signuppassword);
+        bregister = findViewById(R.id.signupbutton);
 
         firebaseAuth =  FirebaseAuth.getInstance();
 
@@ -51,6 +49,10 @@ public class Signup extends AppCompatActivity {
                 if(TextUtils.isEmpty(password)){
                     tpassword.setError("Password is needed!");
                     return;
+                }
+
+                if(tpassword.length()<8){
+                    tpassword.setError("Password must be 8 characters or more");
                 }
 
                         //successful creation

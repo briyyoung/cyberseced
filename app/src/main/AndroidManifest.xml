@@ -24,6 +24,7 @@
         <activity android:name=".Signup" />
         <activity android:name=".LearningEntry" />
         <activity android:name=".Login" />
+        <activity android:name=".Home" />
     </application>
 
 </manifest>

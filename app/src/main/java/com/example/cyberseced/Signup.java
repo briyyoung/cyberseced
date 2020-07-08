@@ -50,7 +50,7 @@ public class Signup extends AppCompatActivity {
                String name = tname.getText().toString().trim();
 
                 if(TextUtils.isEmpty(name)){
-                    tname.setError("I've never meet someone called *blank* before. Please enter a name");
+                    tname.setError("I've never met someone called *blank* before. Please enter a name");
                     return;
                 }
 

@@ -16,6 +16,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class Signup extends AppCompatActivity {
 
@@ -32,8 +33,14 @@ public class Signup extends AppCompatActivity {
         temail = findViewById(R.id.signupemail);
         tpassword = findViewById(R.id.signuppassword);
         bregister = findViewById(R.id.signupbutton);
-
         firebaseAuth =  FirebaseAuth.getInstance();
+
+
+        if (firebaseAuth.getCurrentUser() != null) {
+            startActivity(new Intent(getApplicationContext(),LearningEntry.class));
+            finish();
+            Toast.makeText(Signup.this, "Your are already logged in", Toast.LENGTH_SHORT).show();
+        }
 
         bregister.setOnClickListener(new View.OnClickListener() {
             @Override

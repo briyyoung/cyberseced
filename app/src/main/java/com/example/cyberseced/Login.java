@@ -34,12 +34,15 @@ public class Login extends AppCompatActivity {
 
         eemail = findViewById(R.id.loginname);
         epassword = findViewById(R.id.loginpassword);
-        ;
         firebaseAuth = FirebaseAuth.getInstance();
         blogin = findViewById(R.id.loginbutton);
-        ;
         tforgot = findViewById(R.id.forgotpassword);
-        ;
+
+        if (firebaseAuth.getCurrentUser() != null) {
+            startActivity(new Intent(getApplicationContext(),LearningEntry.class));
+            finish();
+            Toast.makeText(Login.this, "Your are already logged in", Toast.LENGTH_SHORT).show();
+        }
 
         blogin.setOnClickListener(new View.OnClickListener() {
             @Override

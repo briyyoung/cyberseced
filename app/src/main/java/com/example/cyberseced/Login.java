@@ -3,6 +3,7 @@ package com.example.cyberseced;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -39,7 +40,7 @@ public class Login extends AppCompatActivity {
         tforgot = findViewById(R.id.forgotpassword);
 
         if (firebaseAuth.getCurrentUser() != null) {
-            startActivity(new Intent(getApplicationContext(),LearningEntry.class));
+            startActivity(new Intent(getApplicationContext(), LearningEntry.class));
             finish();
             Toast.makeText(Login.this, "Your are already logged in", Toast.LENGTH_SHORT).show();
         }
@@ -49,6 +50,16 @@ public class Login extends AppCompatActivity {
             public void onClick(View v) {
                 String email = eemail.getText().toString().trim();
                 String password = epassword.getText().toString().trim();
+
+                if (TextUtils.isEmpty(email)) {
+                    eemail.setError("Email is needed!");
+                    return;
+                }
+
+                if (TextUtils.isEmpty(password)) {
+                    epassword.setError("Password is needed!");
+                    return;
+                }
 
                 firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
@@ -80,6 +91,7 @@ public class Login extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
+
                         String password = reset.getText().toString();
                         firebaseAuth.sendPasswordResetEmail(password).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
@@ -89,12 +101,12 @@ public class Login extends AppCompatActivity {
 
                         });
 
-                     firebaseAuth.sendPasswordResetEmail(password).addOnFailureListener(new OnFailureListener() {
-                           @Override
+                        firebaseAuth.sendPasswordResetEmail(password).addOnFailureListener(new OnFailureListener() {
+                            @Override
                             public void onFailure(@NonNull Exception e) {
-                               Toast.makeText(Login.this, "Link not sent", Toast.LENGTH_SHORT).show();
-                     }
-                      });
+                                Toast.makeText(Login.this, "Email not found!", Toast.LENGTH_SHORT).show();
+                            }
+                        });
 
 
                     }
@@ -108,7 +120,20 @@ public class Login extends AppCompatActivity {
                     }
                 });
 
-                resetDialog.create().show();
+                final AlertDialog alertDialog = resetDialog.create();
+                alertDialog.show();
+
+
+                alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Boolean wantToCloseDialog = (reset.getText().toString().trim().isEmpty());
+                        // if EditText is empty disable closing on positive button
+                        if (!wantToCloseDialog)
+                            alertDialog.dismiss();
+                    }
+                });
+
 
             }
 

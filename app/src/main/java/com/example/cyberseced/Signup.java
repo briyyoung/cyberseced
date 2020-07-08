@@ -39,7 +39,7 @@ public class Signup extends AppCompatActivity {
         if (firebaseAuth.getCurrentUser() != null) {
             startActivity(new Intent(getApplicationContext(),LearningEntry.class));
             finish();
-            Toast.makeText(Signup.this, "Your are already logged in", Toast.LENGTH_SHORT).show();
+            Toast.makeText(Signup.this, "Your are logged in", Toast.LENGTH_SHORT).show();
         }
 
         bregister.setOnClickListener(new View.OnClickListener() {
@@ -47,6 +47,12 @@ public class Signup extends AppCompatActivity {
             public void onClick(View v) {
                 String email = temail.getText().toString().trim();
                 String password = tpassword.getText().toString().trim();
+               String name = tname.getText().toString().trim();
+
+                if(TextUtils.isEmpty(name)){
+                    tname.setError("I've never meet someone called *blank* before. Please enter a name");
+                    return;
+                }
 
                 if(TextUtils.isEmpty(email)){
                     temail.setError("Email is needed!");
@@ -54,7 +60,7 @@ public class Signup extends AppCompatActivity {
                 }
 
                 if(TextUtils.isEmpty(password)){
-                    tpassword.setError("Password is needed!");
+                    tpassword.setError("Wow! You really want to be hacked, don't you? Please enter a password!");
                     return;
                 }
 

@@ -70,7 +70,7 @@ public class Modules {
         modules.add(new Modules("How to stay safe online", 3, " ", R.drawable.graphic3));
         modules.add(new Modules("Work from Home: How to secure your remote/home workplace", 4, " ", R.drawable.graphic4));
         modules.add(new Modules("Best practices - Passwords", 5, " ", R.drawable.graphic5));
-        modules.add(new Modules("Physical Security – Shoulder Surfing, Tailgating, Dumpster Diving", 6, " ", R.drawable.cyber));
+        modules.add(new Modules("Physical Security – Shoulder Surfing, Tailgating, Dumpster Diving", 6, " ", R.drawable.graphic6));
 
         return modules;
     }

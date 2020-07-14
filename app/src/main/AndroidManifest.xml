@@ -25,6 +25,7 @@
         <activity android:name=".LearningEntry" />
         <activity android:name=".Login" />
         <activity android:name=".Home" />
+        <activity android:name=".Quiz" />
     </application>
 
 </manifest>

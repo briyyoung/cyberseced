@@ -13,7 +13,7 @@ import java.util.List;
 
 public class QuizDBHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "quiz.db";
-    private static final int DATABASE_VER = 1;
+    private static final int DATABASE_VER = 2;
 
     private SQLiteDatabase db;
 
@@ -51,9 +51,12 @@ public class QuizDBHelper extends SQLiteOpenHelper {
     private void fillQuestionsTable() {
         QuizQuestions q1 = new QuizQuestions("A is right", "Ak", "B", "C", "D", 1);
         addQuestion(q1);
-
-
-
+        QuizQuestions q2 = new QuizQuestions("A is right", "Ak", "B", "C", "D", 2);
+        addQuestion(q2);
+        QuizQuestions q3 = new QuizQuestions("A is right", "Ak", "B", "C", "D", 3);
+        addQuestion(q3);
+        QuizQuestions q4 = new QuizQuestions("A is right", "Ak", "B", "C", "D", 4);
+        addQuestion(q4);
     }
 
     private void addQuestion(QuizQuestions quizQuestions) {

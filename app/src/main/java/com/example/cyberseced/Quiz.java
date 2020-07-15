@@ -40,7 +40,6 @@ public class Quiz extends AppCompatActivity {
         question = findViewById(R.id.text_view_question);
         score = findViewById(R.id.text_view_score);
         count = findViewById(R.id.text_view_question_count);
-        countdown = findViewById(R.id.text_view_countdown);
 
         a = findViewById(R.id.radio_button1);
         b = findViewById(R.id.radio_button2);

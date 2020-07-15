@@ -13,21 +13,18 @@
         android:layout_height="wrap_content"
         android:text="Score: 0"
         android:textColor="@android:color/black" />
+
     <TextView
         android:id="@+id/text_view_question_count"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/text_view_score"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="-18dp"
+        android:layout_marginEnd="12dp"
         android:text="Question: 1/x"
         android:textColor="@android:color/black" />
-    <TextView
-        android:id="@+id/text_view_countdown"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:text="00:30"
-        android:textColor="@android:color/black"
-        android:textSize="40sp" />
+
     <TextView
         android:id="@+id/text_view_question"
         android:layout_width="match_parent"

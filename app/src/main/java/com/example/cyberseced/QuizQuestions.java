@@ -7,17 +7,19 @@ public class QuizQuestions {
     private String optionC;
     private String optionD;
     private int answer;
+    private int catID;
 
     public QuizQuestions(){}
 
-
-    public QuizQuestions(String question, String optionA, String optionB, String optionC, String optionD, int answer) {
+    public QuizQuestions(String question, String optionA, String optionB, String optionC, String optionD, int answer, int catID) {
         this.question = question;
         this.optionA = optionA;
         this.optionB = optionB;
         this.optionC = optionC;
         this.optionD = optionD;
         this.answer = answer;
+        this.catID = catID;
+
     }
 
 
@@ -67,5 +69,14 @@ public class QuizQuestions {
 
     public void setAnswer(int answer) {
         this.answer = answer;
+    }
+
+
+    public int getCatID() {
+        return catID;
+    }
+
+    public void setCatID(int catID) {
+        this.catID = catID;
     }
 }

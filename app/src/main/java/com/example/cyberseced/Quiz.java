@@ -1,5 +1,6 @@
 package com.example.cyberseced;
 
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -16,6 +17,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.Collections;
 import java.util.List;
 
+import static com.example.cyberseced.LearningDetail.ARG_NAME;
+
 public class Quiz extends AppCompatActivity {
     private TextView question, score, countdown, count;
     private RadioGroup radioGroup;
@@ -23,6 +26,7 @@ public class Quiz extends AppCompatActivity {
     private Button confirmnext;
 
     private ColorStateList colorStateList;
+    public static final String CAT_NAME = " ";
 
     private List<QuizQuestions> quizQuestionsList;
     private int questionCounter;
@@ -36,6 +40,12 @@ public class Quiz extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.quiz);
+
+        //get module name
+        Intent intent = getIntent();
+       intent.getStringExtra(CAT_NAME);
+        System.out.println(intent.getStringExtra(CAT_NAME));
+
 
         question = findViewById(R.id.text_view_question);
         score = findViewById(R.id.text_view_score);

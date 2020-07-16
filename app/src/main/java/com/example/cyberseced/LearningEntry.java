@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class LearningEntry extends AppCompatActivity {
-    public static final String CHOICE = "ggg";
+    public static final String CHOICE = " ";
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
@@ -59,7 +59,7 @@ public class LearningEntry extends AppCompatActivity {
                 Intent intent = new Intent(LearningEntry.this, LearningHome.class);
                 intent.putExtra(CHOICE, modules.getName());
 
-                startActivity(intent);
+                  startActivity(intent);
 
             }
         };

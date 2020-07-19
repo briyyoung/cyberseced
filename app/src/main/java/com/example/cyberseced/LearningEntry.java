@@ -80,11 +80,11 @@ public class LearningEntry extends AppCompatActivity implements BottomNavigation
         int id = item.getItemId();
         switch (id){
             case R.id.navigation_home:
-                Intent intent2 = new Intent(LearningEntry.this, MainActivity.class);
+                Intent intent2 = new Intent(LearningEntry.this, Profile.class);
                 startActivity(intent2);
                 break;
             case R.id.navigation_quiz:
-                Intent intent3 = new Intent(LearningEntry.this, Quiz.class);
+                Intent intent3 = new Intent(LearningEntry.this, LearningEntry.class);
                 startActivity(intent3);
                 break;
             case  R.id.navigation_forum:

@@ -27,6 +27,7 @@
         <activity android:name=".Home" />
         <activity android:name=".Quiz" />
         <activity android:name=".ForumHome"/>
+        <activity android:name=".Profile" />
     </application>
 
 </manifest>

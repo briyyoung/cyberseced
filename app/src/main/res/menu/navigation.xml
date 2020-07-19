@@ -4,15 +4,15 @@
     <item
         android:id="@+id/navigation_home"
         android:icon="@drawable/ic_home"
-        android:title="Home"/>
+        android:title="Profile" />
 
     <item
         android:id="@+id/navigation_quiz"
         android:icon="@drawable/ic_learning"
-        android:title="Quiz"/>
+        android:title="Modules" />
 
     <item
         android:id="@+id/navigation_forum"
         android:icon="@drawable/ic_forum"
-        android:title="Forum"/>
+        android:title="Posts" />
 </menu>

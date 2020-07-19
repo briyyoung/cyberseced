@@ -7,6 +7,19 @@
     tools:context=".MainActivity"
     android:background="@android:color/holo_orange_light">
 
+    <Button
+        android:id="@+id/contactBtn"
+        android:layout_width="85dp"
+        android:layout_height="45dp"
+        android:text="Contact Us"
+        android:textSize="11dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.027"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="0dp"

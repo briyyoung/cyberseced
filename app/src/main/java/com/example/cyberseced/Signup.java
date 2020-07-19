@@ -28,7 +28,7 @@ import java.util.Map;
 
 public class Signup extends AppCompatActivity {
 
-    private static final String TAG = "";
+
     TextView tname, temail, tpassword;
     Button bregister;
     FirebaseAuth firebaseAuth;
@@ -95,14 +95,14 @@ public class Signup extends AppCompatActivity {
                             documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
-                                    Log.d(TAG, "Success" + userID);
+                                    Log.d("TAG", "Success" + userID);
                                 }
                             })
 
                           .addOnFailureListener(new OnFailureListener() {
                                 @Override
                                 public void onFailure(@NonNull Exception e) {
-                                    Log.d(TAG, "Failure" + e.toString());
+                                    Log.d("TAG", "Failure" + e.toString());
                                 }
 
                             });
@@ -110,7 +110,7 @@ public class Signup extends AppCompatActivity {
                             startActivity(new Intent(getApplicationContext(), Home.class));
 
                         } else {
-                            Log.e(TAG, "onComplete: Failed=" + task.getException().getMessage());
+                            Log.e("TAG", "onComplete: Failed=" + task.getException().getMessage());
                             Toast.makeText(Signup.this, "Error encountered", Toast.LENGTH_SHORT).show();
 
                         }

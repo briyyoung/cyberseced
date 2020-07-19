@@ -36,9 +36,9 @@ public class LearningAdapter extends RecyclerView.Adapter<LearningAdapter.MainAc
     @Override
     public void onBindViewHolder(@NonNull MainActivityViewHolder holder, int position) {
         Modules modules = modulesList.get(position);
-        holder.moduleName.setText(modules.getName());
+//        holder.moduleName.setText(modules.getName());
 
-        int icon = holder.itemView.getContext().getResources().getIdentifier("pic_" + modules.getmImage(), "drawable", "com.example.cyberseced");
+        int icon = holder.itemView.getContext().getResources().getIdentifier("module_" + modules.getmImage(), "drawable", "com.example.cyberseced");
         holder.moduleIcon.setImageResource(icon);
 
     }
@@ -56,7 +56,7 @@ public class LearningAdapter extends RecyclerView.Adapter<LearningAdapter.MainAc
         public MainActivityViewHolder(@NonNull View itemView, RecyclerViewClickListener listener) {
             super(itemView);
             moduleIcon = itemView.findViewById(R.id.topicPicList);
-            moduleName = itemView.findViewById(R.id.topicNameList);
+         //   moduleName = itemView.findViewById(R.id.topicNameList);
             mListener = listener;
             itemView.setOnClickListener(this);
 

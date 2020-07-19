@@ -95,7 +95,7 @@ public class LearningEntry extends AppCompatActivity {
     private void startRecyclerView() {
         mRecyclerView = findViewById(R.id.mainActivityView);
         mRecyclerView.setHasFixedSize(true);
-        mLayoutManager = new GridLayoutManager(this, 3);
+        mLayoutManager = new GridLayoutManager(this, 2);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         LearningAdapter.RecyclerViewClickListener listener = new LearningAdapter.RecyclerViewClickListener() {

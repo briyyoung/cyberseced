@@ -22,6 +22,7 @@ public class LearningEntry extends AppCompatActivity implements BottomNavigation
     private RecyclerView.LayoutManager mLayoutManager;
     FirebaseAuth firebaseAuth;
     BottomNavigationView bottomNavigation;
+    private Button contactUsBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +45,21 @@ public class LearningEntry extends AppCompatActivity implements BottomNavigation
                 Toast.makeText(LearningEntry.this, "You have been logged out", Toast.LENGTH_SHORT).show();
 
 
+            }
+        });
+        contactUsBtn = findViewById(R.id.contactBtn);
+        contactUsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(Intent.ACTION_SEND);
+                String[] recipients={"testlah8@gmail.com"};
+                intent.putExtra(Intent.EXTRA_EMAIL, recipients);
+                intent.putExtra(Intent.EXTRA_SUBJECT,"Enquiry to UNSW");
+                intent.putExtra(Intent.EXTRA_TEXT," ");
+                intent.putExtra(Intent.EXTRA_CC,"testlah8@gmail.com");
+                intent.setType("text/html");
+                intent.setPackage("com.google.android.gm");
+                startActivity(Intent.createChooser(intent, "Send Feedback "));
             }
         });
         bottomNavigation = findViewById(R.id.navigationView);

@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@android:color/holo_orange_light">
+    android:background="@android:color/white"
+    tools:context=".MainActivity">
 
     <Button
         android:id="@+id/contactBtn"
-        android:layout_width="85dp"
-        android:layout_height="45dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:text="Contact Us"
         android:textSize="11dp"
@@ -63,20 +63,18 @@
         android:id="@+id/navigationView"
         android:layout_width="392dp"
         android:layout_height="47dp"
-        android:layout_marginTop="11dp"
+        android:layout_marginBottom="32dp"
         android:background="@android:color/holo_orange_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mainActivityView"
-        app:layout_constraintVertical_bias="0.24"
         app:menu="@menu/navigation" />
 
     <Button
         android:id="@+id/signout"
-        android:layout_width="86dp"
-        android:layout_height="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:text="Sign out"
         app:layout_constraintBottom_toBottomOf="parent"

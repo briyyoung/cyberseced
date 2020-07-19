@@ -36,11 +36,11 @@ public class Profile extends AppCompatActivity  {
                 case R.id.navigation_quiz:
                     Intent intent3 = new Intent(Profile.this, LearningEntry.class);
                     startActivity(intent3);
-                    break;
+                    return true;
                 case R.id.navigation_forum:
                     Intent intent1 = new Intent(Profile.this, ForumHome.class);
                     startActivity(intent1);
-                    break;
+                    return true;
             }
             return false;
         }

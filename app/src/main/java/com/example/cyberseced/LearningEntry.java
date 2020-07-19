@@ -32,21 +32,6 @@ public class LearningEntry extends AppCompatActivity {
         startRecyclerView();
 
 
-        Button signout = (Button) findViewById(R.id.signout);
-        signout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                FirebaseAuth.getInstance().signOut();
-
-                Intent intent = new Intent(LearningEntry.this, MainActivity.class);
-                startActivity(intent);
-
-                Toast.makeText(LearningEntry.this, "You have been logged out", Toast.LENGTH_SHORT).show();
-
-
-            }
-        });
         contactUsBtn = findViewById(R.id.contactBtn);
         contactUsBtn.setOnClickListener(new View.OnClickListener() {
             @Override

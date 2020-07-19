@@ -1,9 +1,16 @@
 package com.example.cyberseced;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -22,7 +29,9 @@ public class Profile extends AppCompatActivity {
     TextView name, email;
     FirebaseFirestore firestore;
     FirebaseAuth firebaseAuth;
-String userId;
+    String userId;
+    ImageView profilepic;
+    Button changeProfile;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -31,19 +40,38 @@ String userId;
 
         name = findViewById(R.id.ProfileName);
         email = findViewById(R.id.ProfileEmail);
+        profilepic = findViewById(R.id.ProfilePic);
+        changeProfile = findViewById(R.id.chnageprofile);
 
         firebaseAuth = FirebaseAuth.getInstance();
         firestore = FirebaseFirestore.getInstance();
 
         userId = firebaseAuth.getCurrentUser().getUid();
-            DocumentReference documentReference = firestore.collection("users").document(userId);
-            documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
-                @Override
-                public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
-                    name.setText(documentSnapshot.getString("tname"));
-                    email.setText(documentSnapshot.getString("temail"));
-                }
-            });
+        DocumentReference documentReference = firestore.collection("users").document(userId);
+        documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
+                name.setText(documentSnapshot.getString("tname"));
+                email.setText(documentSnapshot.getString("temail"));
+            }
+        });
+
+
+        Button signout = (Button) findViewById(R.id.signout);
+        signout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                FirebaseAuth.getInstance().signOut();
+
+                Intent intent = new Intent(Profile.this, MainActivity.class);
+                startActivity(intent);
+
+                Toast.makeText(Profile.this, "You have been logged out", Toast.LENGTH_SHORT).show();
+
+
+            }
+        });
 
 
         bottomNavigation = findViewById(R.id.navigationView);
@@ -71,7 +99,30 @@ String userId;
                 return false;
             }
         });
+
+
+        changeProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //open gallery
+                Intent OpenGallery = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(OpenGallery, 1000);
+
+            }
+        });
+
+
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1000) {
+            if (resultCode == Activity.RESULT_OK) {
+                Uri imageUri = data.getData();
+                profilepic.setImageURI(imageUri);
+            }
+        }
 
+    }
 }

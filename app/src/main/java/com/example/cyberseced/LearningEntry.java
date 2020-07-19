@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class LearningEntry extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
+public class LearningEntry extends AppCompatActivity {
     public static final String CHOICE = " ";
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
@@ -51,22 +51,45 @@ public class LearningEntry extends AppCompatActivity implements BottomNavigation
         contactUsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(Intent.ACTION_SEND);
-                String[] recipients={"testlah8@gmail.com"};
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                String[] recipients = {"testlah8@gmail.com"};
                 intent.putExtra(Intent.EXTRA_EMAIL, recipients);
-                intent.putExtra(Intent.EXTRA_SUBJECT,"Enquiry to UNSW");
-                intent.putExtra(Intent.EXTRA_TEXT," ");
-                intent.putExtra(Intent.EXTRA_CC,"testlah8@gmail.com");
+                intent.putExtra(Intent.EXTRA_SUBJECT, "Enquiry to UNSW");
+                intent.putExtra(Intent.EXTRA_TEXT, " ");
+                intent.putExtra(Intent.EXTRA_CC, "testlah8@gmail.com");
                 intent.setType("text/html");
                 intent.setPackage("com.google.android.gm");
                 startActivity(Intent.createChooser(intent, "Send Feedback "));
             }
         });
         bottomNavigation = findViewById(R.id.navigationView);
-        bottomNavigation.setOnNavigationItemSelectedListener(this);
+        bottomNavigation.setSelectedItemId(R.id.navigation_quiz);
+
+        bottomNavigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                int id = item.getItemId();
+                switch (id) {
+                    case R.id.navigation_home:
+                        Intent intent2 = new Intent(LearningEntry.this, Profile.class);
+                        startActivity(intent2);
+                        return true;
+                    //   case R.id.navigation_quiz:
+                    //        Intent intent3 = new Intent(LearningEntry.this, LearningEntry.class);
+                    //        startActivity(intent3);
+                    //         break;
+                    case R.id.navigation_forum:
+                        Intent intent1 = new Intent(LearningEntry.this, ForumHome.class);
+                        startActivity(intent1);
+                        return true;
+                }
+                return false;
+            }
+        });
+
 
     }
-
 
 
     private void startRecyclerView() {
@@ -82,33 +105,13 @@ public class LearningEntry extends AppCompatActivity implements BottomNavigation
                 Intent intent = new Intent(LearningEntry.this, LearningHome.class);
                 intent.putExtra(CHOICE, modules.getName());
 
-                  startActivity(intent);
+                startActivity(intent);
 
             }
         };
 
         mAdapter = new LearningAdapter(Modules.getModules(), listener);
         mRecyclerView.setAdapter(mAdapter);
-    }
-
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-        int id = item.getItemId();
-        switch (id){
-            case R.id.navigation_home:
-                Intent intent2 = new Intent(LearningEntry.this, Profile.class);
-                startActivity(intent2);
-                break;
-            case R.id.navigation_quiz:
-                Intent intent3 = new Intent(LearningEntry.this, LearningEntry.class);
-                startActivity(intent3);
-                break;
-            case  R.id.navigation_forum:
-                Intent intent1 = new Intent(LearningEntry.this, ForumHome.class);
-                startActivity(intent1);
-                break;
-        }
-        return false;
     }
 
 

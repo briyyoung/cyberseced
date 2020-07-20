@@ -54,7 +54,7 @@
         app:layout_constraintTop_toBottomOf="@+id/ProfilePic" />
 
     <Button
-        android:id="@+id/chnageprofile"
+        android:id="@+id/changeprofile"
         android:layout_width="138dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"

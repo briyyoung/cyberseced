@@ -191,16 +191,14 @@ public class Profile extends AppCompatActivity {
                     public void onClick(View v) {
 
                         Intent i = new Intent(v.getContext(),EditProfile.class);
-                        i.putExtra("name" , "gsgf");
-                        i.putExtra("email" , "gsgf@gmail.com");
-                        i.putExtra("phone" , "548714871");
+                        i.putExtra("name" , name.getText().toString());
+                        i.putExtra("email" ,email.getText().toString());
+
 
                         startActivity(i);
 
 
-                        //open gallery
-                   //     Intent OpenGallery = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                   //     startActivityForResult(OpenGallery, 1000);
+
 
                     }
                 });
@@ -209,46 +207,8 @@ public class Profile extends AppCompatActivity {
             }
 
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 1000) {
-            if (resultCode == Activity.RESULT_OK) {
-                Uri imageUri = data.getData();
-
-                //    profilepic.setImageURI(imageUri);
-
-                upload(imageUri);
-            }
-        }
-
-    }
-
-    private void upload(Uri imageUri) {
-
-        final StorageReference fileRef = storageReference.child("users/" + firebaseAuth.getCurrentUser().getUid() + "/profile.jpg");
-        fileRef.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-            @Override
-            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                Toast.makeText(Profile.this, "Image Uploaded", Toast.LENGTH_SHORT).show();
-
-                fileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                    @Override
-                    public void onSuccess(Uri uri) {
-                        Picasso.get().load(uri).into(profilepic);
-                    }
-                });
 
 
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(Profile.this, "Failed", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-    }
 
 
 }

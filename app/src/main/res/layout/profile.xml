@@ -55,7 +55,7 @@
 
     <Button
         android:id="@+id/changeprofile"
-        android:layout_width="138dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:text="Change Profile"
@@ -77,7 +77,7 @@
 
     <Button
         android:id="@+id/changepassword"
-        android:layout_width="143dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:text="Reset Password"

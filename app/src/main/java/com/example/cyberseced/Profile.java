@@ -189,9 +189,18 @@ public class Profile extends AppCompatActivity {
                 changeProfile.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        Intent i = new Intent(v.getContext(),EditProfile.class);
+                        i.putExtra("name" , "gsgf");
+                        i.putExtra("email" , "gsgf@gmail.com");
+                        i.putExtra("phone" , "548714871");
+
+                        startActivity(i);
+
+
                         //open gallery
-                        Intent OpenGallery = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                        startActivityForResult(OpenGallery, 1000);
+                   //     Intent OpenGallery = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                   //     startActivityForResult(OpenGallery, 1000);
 
                     }
                 });

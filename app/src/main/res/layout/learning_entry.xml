@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
-    tools:context=".MainActivity">
+
+    tools:context=".MainActivity"
+    android:background="#FFF3E0">
 
     <Button
         android:id="@+id/contactBtn"
@@ -14,6 +15,8 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
+        android:background="@drawable/rounded_button"
+        android:backgroundTint="@color/colorPrimaryDark"
         android:text="Contact Us"
         android:textSize="11dp"
         app:layout_constraintEnd_toEndOf="parent"

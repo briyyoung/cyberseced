@@ -66,7 +66,7 @@ public class LearningEntry extends AppCompatActivity {
                     //        startActivity(intent3);
                     //         break;
                     case R.id.navigation_forum:
-                        Intent intent1 = new Intent(LearningEntry.this, ForumHome.class);
+                        Intent intent1 = new Intent(LearningEntry.this, Post.class);
                         startActivity(intent1);
                         return true;
                 }

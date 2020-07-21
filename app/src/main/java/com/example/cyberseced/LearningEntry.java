@@ -17,6 +17,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class LearningEntry extends AppCompatActivity {
     public static final String CHOICE = " ";
+    public static final String CAT = " ";
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
@@ -89,6 +90,7 @@ public class LearningEntry extends AppCompatActivity {
                 Modules modules = Modules.getModules().get(position);
                 Intent intent = new Intent(LearningEntry.this, LearningHome.class);
                 intent.putExtra(CHOICE, modules.getName());
+
 
                 startActivity(intent);
 

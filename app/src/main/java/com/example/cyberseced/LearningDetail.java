@@ -14,7 +14,7 @@ import androidx.core.content.res.ResourcesCompat;
 
 public class LearningDetail extends AppCompatActivity {
     public static final String ARG_NAME = " ";
-    public static String CAT = " ";
+     int CAT = 0 ;
 
     private Modules module;
     private ImageView cImage;
@@ -27,10 +27,36 @@ public class LearningDetail extends AppCompatActivity {
         //get module name
         Intent intent = getIntent();
         module = Modules.getModules(intent.getStringExtra(ARG_NAME));
-        CAT = intent.getStringExtra(ARG_NAME);
 
-        System.out.println(intent.getStringExtra(ARG_NAME));
-        System.out.println(intent.getStringExtra(CAT));
+
+
+        if (intent.getStringExtra(ARG_NAME).equals("Social Engineering Attacks")) {
+            System.out.println(intent.getStringExtra(ARG_NAME));
+            CAT = 1;
+           }
+
+        else if (intent.getStringExtra(ARG_NAME).equals("Psychology Based Attacks")){
+            CAT = 2;
+
+        }
+        else if (intent.getStringExtra(ARG_NAME).equals("Stay safe online")){
+            CAT = 3;
+
+        }
+        else if (intent.getStringExtra(ARG_NAME).equals("Work from Home")){
+
+            CAT = 4;
+        }
+        else if (intent.getStringExtra(ARG_NAME).equals("Best practices")){
+            CAT = 5;
+
+        }
+        else if (intent.getStringExtra(ARG_NAME).equals("Physical Security")){
+
+            CAT = 6;
+        }
+
+
 
 
 
@@ -56,6 +82,9 @@ public class LearningDetail extends AppCompatActivity {
         //new activity
         TakeQuiz.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
+
+
+                System.out.println(CAT);
                 Intent intent = new Intent(LearningDetail.this, QuizEntry.class);
                 startActivity(intent);
 

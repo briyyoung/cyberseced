@@ -9,52 +9,41 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
-import java.util.Locale;
 
-public class QuizEntry extends AppCompatActivity {
+public class QuizExit extends AppCompatActivity {
 
         private static final int REQUEST_CODE_QUIZ = 1;
-        public static final String EXTRA_CATEGORY_ID = "extraCategoryID";
-        public static final String EXTRA_CATEGORY_NAME = "extraCategoryName";
+
         public static final String SHARED_PREFS = "sharedPrefs";
         public static final String KEY_HIGHSCORE = "keyHighscore";
         private TextView textViewHighscore;
-        private Spinner spinnerCategory;
+
         private int highscore;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.quiz_entry);
+            setContentView(R.layout.quiz_exit);
             textViewHighscore = findViewById(R.id.text_view_highscore);
-            spinnerCategory = findViewById(R.id.spinner_category);
 
-            loadCategories();
+
               loadHighscore();
 
-            Button buttonStartQuiz = findViewById(R.id.button_start_quiz);
+            Button buttonStartQuiz = findViewById(R.id.exitQuizbtn);
             buttonStartQuiz.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    startQuiz();
+
+                    Intent intent = new Intent(QuizExit.this, LearningEntry.class);
+                     startActivity(intent);
                 }
             });
         }
-        private void startQuiz() {
-            QuizCategories selectedCategory = (QuizCategories) spinnerCategory.getSelectedItem();
-            int categoryID = selectedCategory.getId();
-            String categoryName = selectedCategory.getName();
-            Intent intent = new Intent(QuizEntry.this, Quiz.class);
-            intent.putExtra(EXTRA_CATEGORY_ID, categoryID);
-            intent.putExtra(EXTRA_CATEGORY_NAME, categoryName);
-             startActivityForResult(intent, REQUEST_CODE_QUIZ);
-        }
+
+
         @Override
         protected void onActivityResult(int requestCode, int resultCode, Intent data) {
             super.onActivityResult(requestCode, resultCode, data);
@@ -68,14 +57,6 @@ public class QuizEntry extends AppCompatActivity {
             }
         }
 
-        private void loadCategories() {
-            QuizDBHelper dbHelper =  new QuizDBHelper(getApplicationContext());
-            List<QuizCategories> categories = dbHelper.getAllCategories();
-            ArrayAdapter<QuizCategories> adapterCategories = new ArrayAdapter<>(this,
-                    android.R.layout.simple_spinner_item, categories);
-            adapterCategories.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            spinnerCategory.setAdapter(adapterCategories);
-        }
 
         private void loadHighscore() {
             SharedPreferences prefs = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);

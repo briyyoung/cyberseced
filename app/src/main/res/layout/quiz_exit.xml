@@ -14,7 +14,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
         android:gravity="center"
-        android:text="Select Topics to Learn about Cyber Security"
+        android:text="Learning Progress"
         android:textColor="@color/colorPrimary"
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,7 +38,7 @@
         android:id="@+id/text_view_highscore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/button_start_quiz"
+        android:layout_above="@id/exitQuizbtn"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="78dp"
         android:text="Highscore: 0"
@@ -48,26 +48,15 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
-        android:id="@+id/button_start_quiz"
+        android:id="@+id/exitQuizbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:layout_marginTop="38dp"
-        android:text="Start Quiz"
+        android:layout_marginTop="32dp"
+        android:text="Exit Quiz"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_view_highscore" />
-
-    <Spinner
-        android:id="@+id/spinner_category"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/button_start_quiz"
-        android:layout_alignStart="@+id/button_start_quiz"
-        android:layout_marginTop="36dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_start_quiz" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

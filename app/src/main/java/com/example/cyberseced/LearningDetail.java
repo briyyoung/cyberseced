@@ -14,7 +14,7 @@ import androidx.core.content.res.ResourcesCompat;
 
 public class LearningDetail extends AppCompatActivity {
     public static final String ARG_NAME = " ";
-     int CAT = 0 ;
+     public static int CAT = 0 ;
 
     private Modules module;
     private ImageView cImage;
@@ -85,10 +85,11 @@ public class LearningDetail extends AppCompatActivity {
 
 
                 System.out.println(CAT);
-                Intent intent = new Intent(LearningDetail.this, QuizEntry.class);
+                Intent intent = new Intent(LearningDetail.this, Quiz.class);
+                intent.putExtra("CAT", CAT);
                 startActivity(intent);
 
-                Intent intents = getIntent();
+
 
 
 

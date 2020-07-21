@@ -127,7 +127,7 @@ public class QuizDBHelper extends SQLiteOpenHelper {
         QuizQuestions q17 = new QuizQuestions("There are how many ‘elements’ that make up psychology-based attacks?", "9", "2", "0", "6", 4, QuizCategories.Psychology_based_attacks);
         addQuestion(q17);
         QuizQuestions q18 = new QuizQuestions("Which of these is an element of psychology-based attacks?", "Disliking", "Social proof", "Mismanagement", "Picture in picture", 2, QuizCategories.Psychology_based_attacks);
-       addQuestion(q12);
+       addQuestion(q18);
         QuizQuestions q19 = new QuizQuestions("Which of these is NOT an element of psychology-based attacks?", "Scarcity", "Authority", "Liking", "Social connection", 4, QuizCategories.Psychology_based_attacks);
         addQuestion(q19);
         QuizQuestions q20 = new QuizQuestions("Finish the element “Consistency & ____", "Commitment", "Creativity", "Connection", "Continuation", 1, QuizCategories.Psychology_based_attacks);

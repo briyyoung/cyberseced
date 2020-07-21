@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 import static com.example.cyberseced.LearningDetail.ARG_NAME;
 
@@ -44,8 +45,7 @@ public class Quiz extends AppCompatActivity {
 
         //get module name
         Intent intent = getIntent();
-        int quizCategory = intent.getIntExtra(QuizEntry.EXTRA_CATEGORY_ID,0);
-        String quizCategoryName = intent.getStringExtra(QuizEntry.EXTRA_CATEGORY_NAME);
+        int quizCategory = intent.getIntExtra("",LearningDetail.CAT);
 
 
         question = findViewById(R.id.text_view_question);
@@ -157,7 +157,14 @@ public class Quiz extends AppCompatActivity {
     }
 
     private void finishQuiz(){
+
+        Intent intent = new Intent(Quiz.this, QuizExit.class);
+
+
+        startActivity(intent);
         finish();
+
+
     }
 
 

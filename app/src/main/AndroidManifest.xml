@@ -31,6 +31,7 @@
         <activity android:name=".Profile" />
         <activity android:name=".EditProfile" />
         <activity android:name=".QuizEntry" />
+        <activity android:name=".QuizExit" />
     </application>
 
 </manifest>

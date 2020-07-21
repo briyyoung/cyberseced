@@ -27,6 +27,7 @@ public class Quiz extends AppCompatActivity {
 
     private ColorStateList colorStateList;
     public static final String CAT_NAME = " ";
+    public static final String EXTRA_SCORE = "extraScore";
 
     private List<QuizQuestions> quizQuestionsList;
     private int questionCounter;

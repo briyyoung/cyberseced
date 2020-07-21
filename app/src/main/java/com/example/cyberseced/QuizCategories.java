@@ -1,12 +1,12 @@
 package com.example.cyberseced;
 
 public class QuizCategories {
-    public static final int Social_Engineering = 1;
-    public static final int Psychology_Based = 2;
-    public static final int safe_online = 3;
-    public static final int Work_from_Home = 4;
+    public static final int Social_engineering_attacks = 1;
+    public static final int Psychology_based_attacks = 2;
+    public static final int Stay_safe_online = 3;
+    public static final int Work_from_home = 4;
     public static final int Best_practices = 5;
-    public static final int Physical_Security = 6;
+    public static final int Physical_security = 6;
 
 
     private int id;
@@ -35,5 +35,10 @@ public class QuizCategories {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString(){
+        return  getName();
     }
 }

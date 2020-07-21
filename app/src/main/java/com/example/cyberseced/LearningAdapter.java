@@ -55,7 +55,7 @@ public class LearningAdapter extends RecyclerView.Adapter<LearningAdapter.MainAc
 
         public MainActivityViewHolder(@NonNull View itemView, RecyclerViewClickListener listener) {
             super(itemView);
-            moduleIcon = itemView.findViewById(R.id.topicPicList);
+            moduleIcon = itemView.findViewById(R.id.LearningPicList);
          //   moduleName = itemView.findViewById(R.id.topicNameList);
             mListener = listener;
             itemView.setOnClickListener(this);

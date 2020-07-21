@@ -14,7 +14,7 @@
     >
 
         <ImageView
-            android:id="@+id/topicPicList"
+            android:id="@+id/LearningPicList"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_alignParentTop="true"

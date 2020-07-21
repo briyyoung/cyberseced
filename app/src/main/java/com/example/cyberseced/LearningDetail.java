@@ -56,16 +56,10 @@ public class LearningDetail extends AppCompatActivity {
         //new activity
         TakeQuiz.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(LearningDetail.this, Quiz.class);
+                Intent intent = new Intent(LearningDetail.this, QuizEntry.class);
                 startActivity(intent);
 
                 Intent intents = getIntent();
-                module = Modules.getModules(intents.getStringExtra(CAT));
-
-            //   intent.putExtra(CAT, module.getName());
-               // intent.putExtra("CATEGORY_NAME", intents.getStringExtra(CAT));
-
-              //  System.out.println("fsdfsdfs "+ intents.getStringExtra(CAT));
 
 
 

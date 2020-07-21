@@ -44,8 +44,8 @@ public class Quiz extends AppCompatActivity {
 
         //get module name
         Intent intent = getIntent();
-       intent.getStringExtra(CAT_NAME);
-        System.out.println(intent.getStringExtra(CAT_NAME));
+        int quizCategory = intent.getIntExtra(QuizEntry.EXTRA_CATEGORY_ID,0);
+        String quizCategoryName = intent.getStringExtra(QuizEntry.EXTRA_CATEGORY_NAME);
 
 
         question = findViewById(R.id.text_view_question);
@@ -62,7 +62,7 @@ public class Quiz extends AppCompatActivity {
 
 
         QuizDBHelper dbHelper = new QuizDBHelper(this);
-        quizQuestionsList = dbHelper.getAllQuestions();
+        quizQuestionsList = dbHelper.getQuestions(quizCategory);
         questionCountTotal = quizQuestionsList.size();
         Collections.shuffle(quizQuestionsList);
 

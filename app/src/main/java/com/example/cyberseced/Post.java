@@ -111,7 +111,7 @@ public class Post extends AppCompatActivity {
                                                 @Override
                                                 public void onComplete(@NonNull Task<Void> task) {
                                                     if (task.isSuccessful()) {
-                                                        Intent intent = new Intent(Post.this, MainActivity.class);
+                                                        Intent intent = new Intent(Post.this, LearningHome.class);
                                                         startActivity(intent);
                                                     }
                                                 }

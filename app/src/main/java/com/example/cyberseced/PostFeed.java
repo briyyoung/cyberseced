@@ -35,10 +35,10 @@ public class PostFeed extends AppCompatActivity {
                         Intent intent3 = new Intent(PostFeed.this, LearningEntry.class);
                         startActivity(intent3);
                         return true;
-                 //   case R.id.navigation_forum:
-               //         Intent intent1 = new Intent(ForumHome.this, ForumHome.class);
-               //         startActivity(intent1);
-                //        return true;
+//                    case R.id.navigation_forum:
+//                        Intent intent1 = new Intent(PostFeed.this, PostFeed.class);
+//                        startActivity(intent1);
+//                        return true;
                 }
                 return false;
             }

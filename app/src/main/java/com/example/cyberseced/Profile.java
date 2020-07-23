@@ -177,7 +177,7 @@ public class Profile extends AppCompatActivity {
                                 startActivity(intent3);
                                 return true;
                             case R.id.navigation_forum:
-                                Intent intent1 = new Intent(Profile.this, ForumHome.class);
+                                Intent intent1 = new Intent(Profile.this, PostFeed.class);
                                 startActivity(intent1);
                                 return true;
                         }

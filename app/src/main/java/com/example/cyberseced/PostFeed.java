@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class ForumHome extends AppCompatActivity {
+public class PostFeed extends AppCompatActivity {
     BottomNavigationView bottomNavigation;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,11 +28,11 @@ public class ForumHome extends AppCompatActivity {
                 int id = item.getItemId();
                 switch (id) {
                           case R.id.navigation_home:
-                            Intent intent2 = new Intent(ForumHome.this, Profile.class);
+                            Intent intent2 = new Intent(PostFeed.this, Profile.class);
                           startActivity(intent2);
                               return true;
                     case R.id.navigation_quiz:
-                        Intent intent3 = new Intent(ForumHome.this, LearningEntry.class);
+                        Intent intent3 = new Intent(PostFeed.this, LearningEntry.class);
                         startActivity(intent3);
                         return true;
                  //   case R.id.navigation_forum:

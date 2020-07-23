@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FFF3E0">
 
     <TextView
         android:id="@+id/ProfileEmail"
@@ -88,17 +89,5 @@
         app:layout_constraintBottom_toTopOf="@+id/signout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="32dp"
-        android:background="#FFF3E0"
-
-        app:layout_constraintBottom_toTopOf="@+id/navigationView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ProfileEmail" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -32,8 +32,8 @@ public class QuizExit extends AppCompatActivity {
 
               loadHighscore();
 
-            Button buttonStartQuiz = findViewById(R.id.exitQuizbtn);
-            buttonStartQuiz.setOnClickListener(new View.OnClickListener() {
+            Button buttonLeave = findViewById(R.id.exitQuizbtn);
+            buttonLeave.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
@@ -41,6 +41,20 @@ public class QuizExit extends AppCompatActivity {
                      startActivity(intent);
                 }
             });
+
+
+
+               Button MoreInfo = (Button) findViewById(R.id.moreInfo);
+
+
+
+             MoreInfo.setOnClickListener(new Button.OnClickListener() {
+                public void onClick(View v) {
+                    Intent intent = new Intent(QuizExit.this, MoreInfo.class);
+                    startActivity(intent);
+                 }
+            });
+
         }
 
 

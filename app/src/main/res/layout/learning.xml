@@ -36,23 +36,11 @@
             android:id="@+id/QuizBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginTop="16dp"
             android:background="@drawable/rounded_button"
             android:backgroundTint="@color/colorPrimaryDark"
             android:text="Take Quiz"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Info" />
-
-        <Button
-            android:id="@+id/MoreInfoBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/rounded_button"
-            android:backgroundTint="@color/colorPrimaryDark"
-            android:text="More Info"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/Info" />
 

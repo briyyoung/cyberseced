@@ -12,17 +12,38 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ResourcesCompat;
 
-public class LearningDetail extends AppCompatActivity {
+import com.google.android.youtube.player.YouTubeBaseActivity;
+import com.google.android.youtube.player.YouTubeInitializationResult;
+import com.google.android.youtube.player.YouTubePlayer;
+import com.google.android.youtube.player.YouTubePlayerView;
+
+public class LearningDetail extends YouTubeBaseActivity {
     public static final String ARG_NAME = " ";
      public static int CAT = 0 ;
-
+YouTubePlayerView playerView;
+    YouTubePlayer.OnInitializedListener onInitializedListener;
+    Button play;
     private Modules module;
     private ImageView cImage;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.learning);
+        playerView = findViewById(R.id.Vidview);
+        play = findViewById(R.id.play);
+
+
+
+
+
+        play.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            playerView.initialize(Config.getAPI(), onInitializedListener);
+            }
+        });
 
         //get module name
         Intent intent = getIntent();
@@ -65,18 +86,41 @@ public class LearningDetail extends AppCompatActivity {
         int graphic = module.getGraphic();
         cImage.setImageResource(graphic);
 
+        onInitializedListener = new YouTubePlayer.OnInitializedListener() {
+            @Override
+            public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
+
+
+                if (CAT==1){
+                youTubePlayer.loadVideo("Vo1urF6S4u0");
+                }
+                else if (CAT==2) {
+                    youTubePlayer.loadVideo("FrNLE1Ixgak");
+                }
+                else if (CAT==3) {
+                    youTubePlayer.loadVideo("GCWBf7WKYyA");
+                }
+                else if (CAT==4) {
+                    youTubePlayer.loadVideo("qskRQchLjHQ");
+                }
+                else if (CAT==5) {
+                    youTubePlayer.loadVideo("_C7sNvIGQzM");
+                }
+                else if (CAT==6) {
+                    youTubePlayer.loadVideo("ORS9DPKJlks");
+                }
+
+
+            }
+
+            @Override
+            public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
+
+            }
+        };
 
         Button TakeQuiz = (Button) findViewById(R.id.QuizBtn);
-        Button MoreInfo = (Button) findViewById(R.id.MoreInfoBtn);
 
-
-        //change image
-        MoreInfo.setOnClickListener(new Button.OnClickListener() {
-            public void onClick(View v) {
-                Drawable MoreInfo = getResources().getDrawable(R.drawable.graphic7);
-                cImage.setImageDrawable(MoreInfo);
-            }
-        });
 
 
         //new activity

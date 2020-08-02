@@ -3,25 +3,24 @@ package com.example.cyberseced;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.squareup.picasso.Picasso;
 
 public class PostFeed extends AppCompatActivity {
@@ -42,6 +41,7 @@ public class PostFeed extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Users");
+
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -64,11 +64,14 @@ public class PostFeed extends AppCompatActivity {
                         .setQuery(mDatabase, Feed.class )
                         .build();
 
-        FirebaseRecyclerAdapter adapter = new FirebaseRecyclerAdapter<Feed, BlogzoneViewHolder>(options) {
+         FirebaseRecyclerAdapter adapter = new FirebaseRecyclerAdapter<Feed, BlogzoneViewHolder>(options) {
             @NonNull
             @Override
             public BlogzoneViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                return null;
+                View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_test, parent, false);
+
+                return new BlogzoneViewHolder(v);
+
             }
 
             @Override
@@ -84,16 +87,20 @@ public class PostFeed extends AppCompatActivity {
                         Intent singleActivity = new Intent(PostFeed.this, SinglePost.class);
                         singleActivity.putExtra("PostID", post_key);
                         startActivity(singleActivity);
+
                     }
+
                 });
+
             }
 
 
         };
 
-
+        recyclerView.setAdapter(adapter);
     }
-    public static class BlogzoneViewHolder extends RecyclerView.ViewHolder{
+
+    public class BlogzoneViewHolder extends RecyclerView.ViewHolder{
         View mView;
         public BlogzoneViewHolder(View itemView) {
             super(itemView);

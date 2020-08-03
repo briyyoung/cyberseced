@@ -6,9 +6,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
-
+/***************************************************************************************
+ *    REFERNCES
+ *    Title: How to Create Welcome Screen (Splash Screen) in Android Studio
+ *    Author: Sabith Pkc Mnr
+ *    Date: 14/7/20
+ *    Code version: 6/9/16
+ *    Availability: https://www.youtube.com/watch?v=jXtof6OUtcE
+ *    Availability: https://github.com/SabithPkcMnr/SplashScreen
+ *
+ ***************************************************************************************/
 public class MainActivity extends AppCompatActivity {
-    //https://www.youtube.com/watch?v=jXtof6OUtcE
+
 private static int splash_time = 4000;
 
 

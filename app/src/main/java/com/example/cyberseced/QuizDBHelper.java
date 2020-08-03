@@ -10,7 +10,15 @@ import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/***************************************************************************************
+ *    REFERNCES
+ *    Title: SQLite Multiple Choice Quiz - Android Studio Tutorial
+ *    Author: Coding in Flow
+ *    Date: 10/7/20
+ *    Code version: 12/8/2019
+ *    Availability: https://www.youtube.com/playlist?list=PLrnPJCHvNZuDCyg4Usq2gHMzz6_CiyQO7
+ *
+ ***************************************************************************************/
 public class QuizDBHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "quiz.db";
     private static final int DATABASE_VER = 1;

@@ -25,7 +25,16 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.Map;
-
+/***************************************************************************************
+ *    REFERNCES
+ *    Title: Firebase Authentication With Email - Firestore Tutorials
+ *    Author: SmallAcademy
+ *    Date: 7/720
+ *    Code version: 27/9/2019
+ *    Availability: https://www.youtube.com/playlist?list=PLlGT4GXi8_8dDK5Y3KCxuKAPpil9V49rN
+ *    Availability: https://smallacademy.co/blog/android/login-register-using-firebase/
+ *
+ ***************************************************************************************/
 public class Signup extends AppCompatActivity {
 
 

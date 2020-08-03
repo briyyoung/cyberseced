@@ -21,7 +21,16 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-
+/***************************************************************************************
+ *    REFERNCES
+ *    Title: Firebase Authentication With Email - Firestore Tutorials
+ *    Author: SmallAcademy
+ *    Date: 7/720
+ *    Code version: 27/9/2019
+ *    Availability: https://www.youtube.com/playlist?list=PLlGT4GXi8_8dDK5Y3KCxuKAPpil9V49rN
+ *    Availability: https://smallacademy.co/blog/android/login-register-using-firebase/
+ *
+ ***************************************************************************************/
 public class Login extends AppCompatActivity {
     EditText eemail, epassword;
     Button blogin;

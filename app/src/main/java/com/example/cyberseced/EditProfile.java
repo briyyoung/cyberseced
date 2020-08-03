@@ -30,6 +30,16 @@ import com.squareup.picasso.Picasso;
 import java.util.HashMap;
 import java.util.Map;
 
+/***************************************************************************************
+ *    Title: Edit Full Profile | Firebase User | Firebase Email Authentication Tutorial
+ *    Author: SmallAcademy
+ *    Date: 24/4/2020
+ *    Code version: 24/4/2020
+ *    Availability: https://github.com/bikashthapa01?tab=repositories
+ *    Availability: https://www.youtube.com/playlist?list=PLlGT4GXi8_8dDK5Y3KCxuKAPpil9V49rN
+ *
+ ***************************************************************************************/
+
 public class EditProfile extends AppCompatActivity {
     EditText editname, editemail;
     Button save;

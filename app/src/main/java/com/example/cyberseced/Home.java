@@ -9,6 +9,17 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+/***************************************************************************************
+ *    REFERNCES
+ *    Title: Animated Gradient Background like Instagram - Android Studio Tutorial
+ *    Author: Coding in Flow
+ *    Date: 7/7/20
+ *    Code version: 8/11/2017
+ *    Availability: https://codinginflow.com/tutorials/android/animated-gradient-background
+ *    Availability: https://www.youtube.com/watch?v=x_DXXGvyfh8
+ *
+ ***************************************************************************************/
+
 public class Home extends AppCompatActivity {
 
     @Override

@@ -1,5 +1,13 @@
 package com.example.cyberseced;
-
+/***************************************************************************************
+ *    REFERNCES
+ *    Title: SQLite Multiple Choice Quiz - Android Studio Tutorial
+ *    Author: Coding in Flow
+ *    Date: 10/7/20
+ *    Code version: 12/8/2019
+ *    Availability: https://www.youtube.com/playlist?list=PLrnPJCHvNZuDCyg4Usq2gHMzz6_CiyQO7
+ *
+ ***************************************************************************************/
 public class QuizCategories {
     public static final int Social_engineering_attacks = 1;
     public static final int Psychology_based_attacks = 2;

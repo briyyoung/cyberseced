@@ -1,5 +1,15 @@
 package com.example.cyberseced;
 
+/***************************************************************************************
+ *    REFERENCES
+ *    Title: Android Beginner Tutorial #16 - Play YouTube Videos using Android Player API in Android Studio
+ *    Author: CodingWithMitch
+ *    Date: 24/3/2017
+ *    Code version: 24/3/2017
+ *    Availability: https://www.youtube.com/watch?v=W4hTJybfU7s
+ *
+ ***************************************************************************************/
+
 public class Config {
 
     public Config(){

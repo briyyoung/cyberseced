@@ -36,8 +36,16 @@ import com.squareup.picasso.Picasso;
 
 import java.net.URI;
 
-// https://www.youtube.com/watch?v=qANyvTysn04
 
+/***************************************************************************************
+ *    REFERNCES
+ *    Title: Set Profile Picture | Firebase User | Firebase Email Authentication Tutorial
+ *    Author: SmallAcademy
+ *    Date: 7/7/20
+ *    Code version: 7/4/20
+ *    Availability: https://www.youtube.com/playlist?list=PLlGT4GXi8_8dDK5Y3KCxuKAPpil9V49rN
+ *
+ ***************************************************************************************/
 public class Profile extends AppCompatActivity {
     BottomNavigationView bottomNavigation;
     TextView name, email;

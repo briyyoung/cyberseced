@@ -12,6 +12,16 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 
 import java.util.ArrayList;
+/***************************************************************************************
+ *    REFERNCES
+ *    Title: RecyclerView + CardView - Part 2 - ADAPTER, LAYOUTMANAGER, RECYCLERVIEW - Android
+ *    Author: Coding in Flow
+ *    Date: 15/6/20
+ *    Code version: 21/10/2017
+ *    Availability: https://www.youtube.com/watch?v=17NbUcEts9c
+ *    Availability: https://codinginflow.com/tutorials/android/simple-recyclerview-java/part-2-adapter
+ *
+ ***************************************************************************************/
 
 public class LearningAdapter extends RecyclerView.Adapter<LearningAdapter.MainActivityViewHolder> {
     private ArrayList<Modules> modulesList;

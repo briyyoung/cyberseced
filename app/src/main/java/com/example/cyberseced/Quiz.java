@@ -19,7 +19,15 @@ import java.util.List;
 import java.util.Objects;
 
 import static com.example.cyberseced.LearningDetail.ARG_NAME;
-
+/***************************************************************************************
+ *    REFERNCES
+ *    Title: <title of program/source code>
+ *    Author: <author(s) names>
+ *    Date: <date>
+ *    Code version: <code version>
+ *    Availability: <where it's located>
+ *
+ ***************************************************************************************/
 public class Quiz extends AppCompatActivity {
     private TextView question, score, countdown, count;
     private RadioGroup radioGroup;

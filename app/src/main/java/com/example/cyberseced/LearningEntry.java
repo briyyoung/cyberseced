@@ -15,7 +15,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
-
+/***************************************************************************************
+ *    REFERENCES
+ *    Title: Android Beginner Tutorial #16 - Play YouTube Videos using Android Player API in Android Studio
+ *    Author: CodingWithMitch
+ *    Date: 24/3/2017
+ *    Code version: 24/3/2017
+ *    Availability: https://www.youtube.com/watch?v=W4hTJybfU7s
+ *
+ ***************************************************************************************/
 public class LearningEntry extends AppCompatActivity {
     public static final String CHOICE = " ";
     public static final String CAT = " ";

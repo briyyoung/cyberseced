@@ -93,7 +93,6 @@ public class PostFeed extends AppCompatActivity {
                 blogzoneViewHolder.setTitle(blogzone.getTitle());
                 blogzoneViewHolder.setDesc(blogzone.getDesc());
                 blogzoneViewHolder.setImageUrl(getApplicationContext(), blogzone.getImageUrl());
-                blogzoneViewHolder.setUserName(blogzone.getUsername());
                 blogzoneViewHolder.mView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -135,10 +134,7 @@ public class PostFeed extends AppCompatActivity {
             ImageView post_image = mView.findViewById(R.id.post_image);
             Picasso.get().load(imageUrl).into(post_image);
         }
-        public void setUserName(String userName){
-            TextView postUserName = mView.findViewById(R.id.post_user);
-            postUserName.setText(userName);
-        }
+
     }
 
 

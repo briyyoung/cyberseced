@@ -35,7 +35,7 @@
         android:layout_marginStart="96dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="96dp"
-        android:text="CyberSecEdu - a Cyber Security app to inform UNSW staff about critical information."
+        android:text="CyberEducate - a Cyber Security app to inform UNSW staff about critical information."
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

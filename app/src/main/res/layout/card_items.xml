@@ -33,19 +33,6 @@
             android:layout_margin="5dp"
             android:text="Post Description"/>
 
-        <TextView
-            android:id="@+id/post_user"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="Kenny"
-            android:textSize="15sp"
-            android:fontFamily="serif"
-            android:gravity="end"
-            android:textStyle="bold"
-            android:textColor="#FF07B618"/>
-
-
 
     </LinearLayout>
 

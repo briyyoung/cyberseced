@@ -34,14 +34,14 @@ public class PostFeed extends AppCompatActivity {
     @Override
         protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_test);
+        setContentView(R.layout.content_main);
       //  Toolbar toolbar = findViewById(R.id.toolbar);
        // setSupportActionBar(toolbar);
         //initialize recyclerview and FIrebase objects
         recyclerView = findViewById(R.id.recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
       //  recyclerView.setHasFixedSize(true);
-        mDatabase = FirebaseDatabase.getInstance().getReference().child("Users");
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("Posts");
 
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
@@ -69,7 +69,7 @@ public class PostFeed extends AppCompatActivity {
             @NonNull
             @Override
             public BlogzoneViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_test, parent, false);
+                View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_items, parent, false);
 
                 return new BlogzoneViewHolder(v);
 
@@ -78,7 +78,7 @@ public class PostFeed extends AppCompatActivity {
             @Override
             protected void onBindViewHolder(@NonNull BlogzoneViewHolder blogzoneViewHolder, int i, @NonNull Feed blogzone) {
                 final String post_key = getRef(i).getKey().toString();
-                blogzoneViewHolder.setTitle((String) blogzone.getTitle());
+                blogzoneViewHolder.setTitle(blogzone.getTitle());
                 blogzoneViewHolder.setDesc(blogzone.getDesc());
                 blogzoneViewHolder.setImageUrl(getApplicationContext(), blogzone.getImageUrl());
                 blogzoneViewHolder.setUserName(blogzone.getUsername());

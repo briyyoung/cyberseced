@@ -61,9 +61,8 @@ public class PostFeed extends AppCompatActivity {
         super.onStart();
         mAuth.addAuthStateListener(mAuthListener);
 
-        FirebaseRecyclerOptions<Feed> options =
-                new FirebaseRecyclerOptions.Builder<Feed>()
-                        .setQuery(mDatabase, Feed.class)
+        FirebaseRecyclerOptions<Feed> options = new FirebaseRecyclerOptions.Builder<Feed>()
+                        .setQuery(mDatabase, Feed.class )
                         .build();
 
          adapter = new FirebaseRecyclerAdapter<Feed, BlogzoneViewHolder>(options) {

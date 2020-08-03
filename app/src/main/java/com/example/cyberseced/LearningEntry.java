@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class LearningEntry extends AppCompatActivity {
@@ -24,6 +25,7 @@ public class LearningEntry extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
     BottomNavigationView bottomNavigation;
     private Button contactUsBtn;
+    private FloatingActionButton buttonFAB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +50,17 @@ public class LearningEntry extends AppCompatActivity {
                 startActivity(Intent.createChooser(intent, "Send Feedback "));
             }
         });
+
+        buttonFAB = findViewById(R.id.fabPost);
+        buttonFAB.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                Intent intent3 = new Intent(LearningEntry.this, Post.class);
+                startActivity(intent3);
+            }
+        });
+
         bottomNavigation = findViewById(R.id.navigationView);
         bottomNavigation.setSelectedItemId(R.id.navigation_quiz);
 

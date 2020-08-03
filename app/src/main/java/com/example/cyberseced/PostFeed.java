@@ -28,6 +28,7 @@ public class PostFeed extends AppCompatActivity {
     private DatabaseReference mDatabase;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
+    private FirebaseRecyclerAdapter adapter;
 
 
     @Override
@@ -39,7 +40,7 @@ public class PostFeed extends AppCompatActivity {
         //initialize recyclerview and FIrebase objects
         recyclerView = findViewById(R.id.recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setHasFixedSize(true);
+      //  recyclerView.setHasFixedSize(true);
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Users");
 
         mAuth = FirebaseAuth.getInstance();
@@ -65,7 +66,7 @@ public class PostFeed extends AppCompatActivity {
                         .setQuery(mDatabase, Feed.class)
                         .build();
 
-         FirebaseRecyclerAdapter adapter = new FirebaseRecyclerAdapter<Feed, BlogzoneViewHolder>(options) {
+         adapter = new FirebaseRecyclerAdapter<Feed, BlogzoneViewHolder>(options) {
             @NonNull
             @Override
             public BlogzoneViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -98,6 +99,10 @@ public class PostFeed extends AppCompatActivity {
 
         };
 
+
+
+        adapter.startListening();
+
         recyclerView.setAdapter(adapter);
     }
 
@@ -126,6 +131,14 @@ public class PostFeed extends AppCompatActivity {
     }
 
 
+
+
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        adapter.stopListening();
+    }
 
 }
 

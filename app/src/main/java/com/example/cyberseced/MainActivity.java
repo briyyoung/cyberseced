@@ -33,14 +33,7 @@ private static int splash_time = 4000;
                 finish();
             }
         },splash_time);
-
-
-
-
-
     }
-
-
 }
 
 

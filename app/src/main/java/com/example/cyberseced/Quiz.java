@@ -167,12 +167,8 @@ public class Quiz extends AppCompatActivity {
     private void finishQuiz(){
 
         Intent intent = new Intent(Quiz.this, QuizExit.class);
-
-
         startActivity(intent);
         finish();
-
-
     }
 
 

@@ -176,10 +176,6 @@ public class Profile extends AppCompatActivity {
 
                         int id = item.getItemId();
                         switch (id) {
-                            //       case R.id.navigation_home:
-                            //         Intent intent2 = new Intent(Profile.this, Profile.class);
-                            //      startActivity(intent2);
-                            //           break;
                             case R.id.navigation_quiz:
                                 Intent intent3 = new Intent(Profile.this, LearningEntry.class);
                                 startActivity(intent3);

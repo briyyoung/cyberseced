@@ -24,7 +24,6 @@ import java.util.List;
 public class QuizExit extends AppCompatActivity {
 
         private static final int REQUEST_CODE_QUIZ = 1;
-
         public static final String SHARED_PREFS = "sharedPrefs";
         public static final String KEY_HIGHSCORE = "keyHighscore";
         private TextView textViewHighscore;

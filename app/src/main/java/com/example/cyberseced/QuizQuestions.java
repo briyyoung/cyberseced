@@ -71,7 +71,6 @@ public class QuizQuestions {
         this.answer = answer;
     }
 
-
     public int getCatID() {
         return catID;
     }

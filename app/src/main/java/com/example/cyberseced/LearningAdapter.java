@@ -12,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 
 import java.util.ArrayList;
+
 /***************************************************************************************
  *    REFERNCES
  *    Title: RecyclerView + CardView - Part 2 - ADAPTER, LAYOUTMANAGER, RECYCLERVIEW - Android
@@ -66,7 +67,6 @@ public class LearningAdapter extends RecyclerView.Adapter<LearningAdapter.MainAc
         public MainActivityViewHolder(@NonNull View itemView, RecyclerViewClickListener listener) {
             super(itemView);
             moduleIcon = itemView.findViewById(R.id.LearningPicList);
-         //   moduleName = itemView.findViewById(R.id.topicNameList);
             mListener = listener;
             itemView.setOnClickListener(this);
 
@@ -77,9 +77,7 @@ public class LearningAdapter extends RecyclerView.Adapter<LearningAdapter.MainAc
         public void onClick(View view) {
             mListener.onClick(view, getAdapterPosition());
         }
-            }
-
-
+    }
 
 
     public interface RecyclerViewClickListener {

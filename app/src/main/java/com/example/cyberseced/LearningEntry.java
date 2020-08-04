@@ -82,10 +82,6 @@ public class LearningEntry extends AppCompatActivity {
                         Intent intent2 = new Intent(LearningEntry.this, Profile.class);
                         startActivity(intent2);
                         return true;
-                    //   case R.id.navigation_quiz:
-                    //        Intent intent3 = new Intent(LearningEntry.this, LearningEntry.class);
-                    //        startActivity(intent3);
-                    //         break;
                     case R.id.navigation_forum:
                         Intent intent1 = new Intent(LearningEntry.this, PostFeed.class);
                         startActivity(intent1);

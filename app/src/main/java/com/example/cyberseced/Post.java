@@ -39,7 +39,6 @@ import com.google.firebase.storage.UploadTask;
  *
  ***************************************************************************************/
 public class Post extends AppCompatActivity {
-    private ImageButton imageBtn;
     private static final int GALLERY_REQUEST_CODE = 2;
     private Uri uri = null;
     private EditText textTitle, textDesc;
@@ -57,7 +56,6 @@ public class Post extends AppCompatActivity {
         setContentView(R.layout.post);
 
         // initializing objects
-
         postBtn = findViewById(R.id.postBtn);
         textDesc = findViewById(R.id.textDesc);
         textTitle = findViewById(R.id.textTitle);
@@ -116,7 +114,7 @@ public class Post extends AppCompatActivity {
         //image from gallery result
         if (requestCode == GALLERY_REQUEST_CODE && resultCode == RESULT_OK) {
             uri = data.getData();
-            imageBtn.setImageURI(uri);
+
         }
     }
 }

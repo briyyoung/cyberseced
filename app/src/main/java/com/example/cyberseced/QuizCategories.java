@@ -21,13 +21,11 @@ public class QuizCategories {
     private String name;
 
     public QuizCategories(){
-
     }
 
     public QuizCategories(String name) {
         this.name = name;
     }
-
 
     public int getId() {
         return id;

@@ -142,15 +142,7 @@ public class Login extends AppCompatActivity {
                             alertDialog.dismiss();
                     }
                 });
-
-
             }
-
-
         });
-
-
     }
-
-
 }

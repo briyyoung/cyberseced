@@ -132,7 +132,12 @@ public class PostFeed extends AppCompatActivity {
         }
         public void setImageUrl(Context ctx, String imageUrl){
             ImageView post_image = mView.findViewById(R.id.post_image);
-            Picasso.get().load(imageUrl).into(post_image);
+//            Picasso.get().load(imageUrl).into(post_image);
+            Picasso.get()
+                    .load(imageUrl)
+                    .placeholder(R.drawable.unsw)
+                    .resize(200,250)
+                    .into(post_image);
         }
 
     }

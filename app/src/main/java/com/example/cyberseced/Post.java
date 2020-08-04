@@ -96,8 +96,8 @@ public class Post extends AppCompatActivity {
                     if (imageBtn.getDrawable() == null) {
                         Toast.makeText(Post.this, "Please insert image!", Toast.LENGTH_SHORT).show();;
                     }
-                    filepath.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
 
+                    filepath.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                             @SuppressWarnings("VisibleForTests")

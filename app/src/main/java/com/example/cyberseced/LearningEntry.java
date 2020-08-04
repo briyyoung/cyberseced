@@ -31,7 +31,7 @@ public class LearningEntry extends AppCompatActivity {
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     FirebaseAuth firebaseAuth;
-    BottomNavigationView bottomNavigation;
+    private BottomNavigationView bottomNavigation;
     private Button contactUsBtn;
     private FloatingActionButton buttonFAB;
 

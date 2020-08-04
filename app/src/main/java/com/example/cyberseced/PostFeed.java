@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -41,6 +42,7 @@ public class PostFeed extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     private FirebaseRecyclerAdapter adapter;
+    private BottomNavigationView bottomNavigation;
 
 
     @Override
@@ -66,6 +68,25 @@ public class PostFeed extends AppCompatActivity {
             }
         };
 
+        bottomNavigation = findViewById(R.id.navigationView);
+        bottomNavigation.setSelectedItemId(R.id.navigation_forum);
+        bottomNavigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int id = item.getItemId();
+                switch (id) {
+                    case R.id.navigation_home:
+                        Intent intent2 = new Intent(PostFeed.this, Profile.class);
+                        startActivity(intent2);
+                        return true;
+                    case R.id.navigation_quiz:
+                        Intent intent1 = new Intent(PostFeed.this, LearningEntry.class);
+                        startActivity(intent1);
+                        return true;
+                }
+                return false;
+            }
+        });
 
     }
     @Override
@@ -115,6 +136,8 @@ public class PostFeed extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
     }
 
+
+
     public class BlogzoneViewHolder extends RecyclerView.ViewHolder{
         View mView;
         public BlogzoneViewHolder(View itemView) {
@@ -130,7 +153,6 @@ public class PostFeed extends AppCompatActivity {
             post_desc.setText(desc);
         }
     }
-
 
 
 

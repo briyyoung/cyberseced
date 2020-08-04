@@ -67,6 +67,7 @@ public class EditProfile extends AppCompatActivity {
         editpic = findViewById(R.id.editPic);
         save = findViewById(R.id.EditSave);
 
+        //create instances of firebase
         firebaseAuth = FirebaseAuth.getInstance();
         firestore = FirebaseFirestore.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
@@ -147,9 +148,6 @@ public class EditProfile extends AppCompatActivity {
         if (requestCode == 1000) {
             if (resultCode == Activity.RESULT_OK) {
                 Uri imageUri = data.getData();
-
-                //    profilepic.setImageURI(imageUri);
-
                 upload(imageUri);
             }
         }

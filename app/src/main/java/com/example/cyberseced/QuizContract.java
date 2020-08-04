@@ -29,12 +29,5 @@ public final class QuizContract {
         public static final String COLUMN_OPTIOND = "D";
         public static final String COLUMN_ANSWERS = "answers";
         public static final String COLUMN_ID = "cat_id";
-
-
     }
-
-
-
-
-
 }

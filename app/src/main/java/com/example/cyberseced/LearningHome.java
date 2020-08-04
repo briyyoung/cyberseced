@@ -26,15 +26,9 @@ public class LearningHome extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
-
         Intent intent = getIntent();
         String moduleName = intent.getStringExtra(LearningEntry.CHOICE);
-
         launchmodule(moduleName);
-
-
-
     }
 
     public void launchmodule (String moduleName){

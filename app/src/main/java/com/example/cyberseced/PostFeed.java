@@ -89,11 +89,11 @@ public class PostFeed extends AppCompatActivity {
 
             @Override
             protected void onBindViewHolder(@NonNull BlogzoneViewHolder blogzoneViewHolder, int i, @NonNull Feed blogzone) {
-                final String post_key = getRef(i).getKey().toString();
+                final String post_key = getRef(i).getKey();
                 blogzoneViewHolder.setTitle(blogzone.getTitle());
                 blogzoneViewHolder.setDesc(blogzone.getDesc());
-                blogzoneViewHolder.setImageUrl(getApplicationContext(), blogzone.getImageUrl());
-                blogzoneViewHolder.mView.setOnClickListener(new View.OnClickListener() {
+                   blogzoneViewHolder.mView.setOnClickListener(new View.OnClickListener() {
+
                     @Override
                     public void onClick(View view) {
                         Intent singleActivity = new Intent(PostFeed.this, SinglePost.class);
@@ -112,7 +112,6 @@ public class PostFeed extends AppCompatActivity {
 
 
         adapter.startListening();
-
         recyclerView.setAdapter(adapter);
     }
 
@@ -130,16 +129,6 @@ public class PostFeed extends AppCompatActivity {
             TextView post_desc = mView.findViewById(R.id.post_desc_txtview);
             post_desc.setText(desc);
         }
-        public void setImageUrl(Context ctx, String imageUrl){
-            ImageView post_image = mView.findViewById(R.id.post_image);
-//            Picasso.get().load(imageUrl).into(post_image);
-            Picasso.get()
-                    .load(imageUrl)
-                    .placeholder(R.drawable.unsw)
-                    .resize(200,250)
-                    .into(post_image);
-        }
-
     }
 
 

@@ -14,23 +14,17 @@ package com.example.cyberseced;
 
 public class Feed {
 
-    private String title, desc, imageUrl;
+    private String title, desc;
 
-    public Feed(String title, String desc, String imageUrl) {
+    public Feed(String title, String desc) {
         this.title = title;
         this.desc = desc;
-        this.imageUrl=imageUrl;
+
 
     }
 
     public Feed() {
     }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
-
-
 
 
     public void setTitle(String title) {
@@ -39,10 +33,6 @@ public class Feed {
 
     public void setDesc(String desc) {
         this.desc = desc;
-    }
-
-    public String getImageUrl() {
-        return imageUrl;
     }
 
     public String getTitle() {

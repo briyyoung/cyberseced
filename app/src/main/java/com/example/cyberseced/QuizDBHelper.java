@@ -22,7 +22,6 @@ import java.util.List;
 public class QuizDBHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "quiz.db";
     private static final int DATABASE_VER = 1;
-
     private SQLiteDatabase db;
 
 
@@ -247,9 +246,5 @@ public class QuizDBHelper extends SQLiteOpenHelper {
 
         c.close();
         return quizQuestionsArrayList;
-
     }
-
-
-
 }

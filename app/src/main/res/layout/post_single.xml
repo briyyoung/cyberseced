@@ -11,12 +11,6 @@
         android:layout_margin="10dp"
         tools:context="com.example.ekene.blogzone.SinglePostActivity">
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:scaleType="centerCrop"
-            android:id="@+id/singleImageview"/>
-
         <TextView
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
@@ -33,16 +27,6 @@
             android:layout_height="wrap_content"
             android:text="Post Description"
             android:id="@+id/singleDesc"/>
-
-        <Button
-            android:id="@+id/deleteBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="delete post"
-            android:background="#FFEA0404"
-            android:textColor="#fff"
-            android:textStyle="bold"/>
 
     </LinearLayout>
 </ScrollView>

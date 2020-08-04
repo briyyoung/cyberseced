@@ -42,12 +42,12 @@ public class SinglePost extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.post_single);
 
-        singelImage = findViewById(R.id.singleImageview);
+
         singleTitle = findViewById(R.id.singleTitle);
         singleDesc = findViewById(R.id.singleDesc);
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Blogzone");
         post_key = getIntent().getExtras().getString("PostID");
-        deleteBtn = findViewById(R.id.deleteBtn);
+
         mAuth = FirebaseAuth.getInstance();
         deleteBtn.setVisibility(View.INVISIBLE);
         deleteBtn.setOnClickListener(new View.OnClickListener() {

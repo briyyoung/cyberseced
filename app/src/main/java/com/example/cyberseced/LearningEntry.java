@@ -23,6 +23,11 @@ import com.google.firebase.auth.FirebaseAuth;
  *    Code version: 24/3/2017
  *    Availability: https://www.youtube.com/watch?v=W4hTJybfU7s
  *
+ *    Title: How to add a Bottom Navigation Bar in Android
+ *    Author: Suragch
+ *    Date: 13/1/2019
+ *    Availability: https://medium.com/@suragch/how-to-add-a-bottom-navigation-bar-in-android-958ed728ef6c
+ *
  ***************************************************************************************/
 public class LearningEntry extends AppCompatActivity {
     public static final String CHOICE = " ";

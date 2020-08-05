@@ -27,13 +27,14 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
 
-
+        //set ambient background
         ConstraintLayout constraintLayout = findViewById(R.id.layout);
         AnimationDrawable animationDrawable = (AnimationDrawable) constraintLayout.getBackground();
         animationDrawable.setEnterFadeDuration(2000);
         animationDrawable.setExitFadeDuration(5000);
         animationDrawable.start();
 
+        //signup
         Button sign = (Button) findViewById(R.id.signup);
         sign.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,6 +46,7 @@ public class Home extends AppCompatActivity {
             }
         });
 
+        //login
         Button login = (Button) findViewById(R.id.login);
         login.setOnClickListener(new View.OnClickListener() {
             @Override

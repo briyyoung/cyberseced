@@ -21,6 +21,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+
 /***************************************************************************************
  *    REFERNCES
  *    Title: Firebase Authentication With Email - Firestore Tutorials
@@ -48,12 +49,14 @@ public class Login extends AppCompatActivity {
         blogin = findViewById(R.id.loginbutton);
         tforgot = findViewById(R.id.forgotpassword);
 
+        //automatically login if the user already has an account
         if (firebaseAuth.getCurrentUser() != null) {
             startActivity(new Intent(getApplicationContext(), LearningEntry.class));
             finish();
             Toast.makeText(Login.this, "Your are already logged in", Toast.LENGTH_SHORT).show();
         }
 
+        //login with details
         blogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,6 +73,7 @@ public class Login extends AppCompatActivity {
                     return;
                 }
 
+                //check details
                 firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -86,6 +90,7 @@ public class Login extends AppCompatActivity {
         });
 
 
+        //reset password option
         tforgot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -137,7 +142,6 @@ public class Login extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         Boolean wantToCloseDialog = (reset.getText().toString().trim().isEmpty());
-                        // if EditText is empty disable closing on positive button
                         if (!wantToCloseDialog)
                             alertDialog.dismiss();
                     }

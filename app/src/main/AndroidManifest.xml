@@ -31,7 +31,6 @@
         <activity android:name=".ForumHome"/>
         <activity android:name=".Profile" />
         <activity android:name=".EditProfile" />
-        <activity android:name=".QuizExit" />
         <activity android:name=".Post" />
         <activity android:name=".PostFeed" />
         <activity android:name=".MoreInfo" />

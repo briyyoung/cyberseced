@@ -9,6 +9,7 @@ package com.example.cyberseced;
  *
  ***************************************************************************************/
 public class QuizCategories {
+    //set categories
     public static final int Social_engineering_attacks = 1;
     public static final int Psychology_based_attacks = 2;
     public static final int Stay_safe_online = 3;
@@ -20,12 +21,15 @@ public class QuizCategories {
     private int id;
     private String name;
 
+    //constructors
     public QuizCategories(){
     }
 
     public QuizCategories(String name) {
         this.name = name;
     }
+
+    //getter and setters
 
     public int getId() {
         return id;

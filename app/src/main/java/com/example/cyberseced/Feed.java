@@ -16,17 +16,16 @@ public class Feed {
 
     private String title, desc;
 
+    //constructor for feed activity
     public Feed(String title, String desc) {
         this.title = title;
         this.desc = desc;
-
-
     }
 
     public Feed() {
     }
 
-
+    //setters and getters
     public void setTitle(String title) {
         this.title = title;
     }

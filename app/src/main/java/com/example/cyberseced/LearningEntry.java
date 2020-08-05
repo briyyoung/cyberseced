@@ -42,7 +42,7 @@ public class LearningEntry extends AppCompatActivity {
 
         startRecyclerView();
 
-
+        //contact via mail
         contactUsBtn = findViewById(R.id.contactBtn);
         contactUsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,10 +107,7 @@ public class LearningEntry extends AppCompatActivity {
                 Modules modules = Modules.getModules().get(position);
                 Intent intent = new Intent(LearningEntry.this, LearningHome.class);
                 intent.putExtra(CHOICE, modules.getName());
-
-
                 startActivity(intent);
-
             }
         };
 

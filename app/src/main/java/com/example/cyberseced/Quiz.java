@@ -68,14 +68,14 @@ public class Quiz extends AppCompatActivity {
         confirmnext = findViewById(R.id.button_confirm_next);
         colorStateList = a.getTextColors();
 
-
+        //access database
         QuizDBHelper dbHelper = new QuizDBHelper(this);
         quizQuestionsList = dbHelper.getQuestions(quizCategory);
         questionCountTotal = quizQuestionsList.size();
         Collections.shuffle(quizQuestionsList);
-
         showNextQuestion();
 
+        //confirm selection
         confirmnext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -92,6 +92,7 @@ public class Quiz extends AppCompatActivity {
         });
     }
 
+    //next question
     private void showNextQuestion() {
         a.setTextColor(colorStateList);
         b.setTextColor(colorStateList);
@@ -118,7 +119,7 @@ public class Quiz extends AppCompatActivity {
         }
 
     }
-
+    //check answer against database
     private void checkAnswer (){
         answered = true;
         RadioButton selected = findViewById(radioGroup.getCheckedRadioButtonId());
@@ -131,6 +132,7 @@ public class Quiz extends AppCompatActivity {
         showSolution();
     }
 
+    //show the correct answer
     private void showSolution(){
         a.setTextColor(Color.RED);
         b.setTextColor(Color.RED);
@@ -164,8 +166,8 @@ public class Quiz extends AppCompatActivity {
         }
     }
 
+    //new activity on finishing quiz
     private void finishQuiz(){
-
         Intent intent = new Intent(Quiz.this, MoreInfo.class);
         startActivity(intent);
         finish();

@@ -56,13 +56,14 @@ public class Signup extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         firestore = FirebaseFirestore.getInstance();
 
-
+        //check if user already has an account
         if (firebaseAuth.getCurrentUser() != null) {
             startActivity(new Intent(getApplicationContext(), LearningEntry.class));
             finish();
             Toast.makeText(Signup.this, "Your are logged in", Toast.LENGTH_SHORT).show();
         }
 
+        //register with user details
         bregister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -89,7 +90,7 @@ public class Signup extends AppCompatActivity {
                     tpassword.setError("Password must be 8 characters or more");
                 }
 
-                //successful creation
+                //insert into firebase on success
                 firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {

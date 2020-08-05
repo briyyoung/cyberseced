@@ -56,12 +56,13 @@ public class EditProfile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.edit_profile);
 
-
+        //get data from profile
         Intent data = getIntent();
         String name = data.getStringExtra("name");
         String email = data.getStringExtra("email");
         String phone = data.getStringExtra("phone");
 
+        //instances of objects
         editemail = findViewById(R.id.EditEmail);
         editname = findViewById(R.id.EditName);
         editpic = findViewById(R.id.editPic);
@@ -75,7 +76,7 @@ public class EditProfile extends AppCompatActivity {
         editemail.setText(email);
         editname.setText(name);
 
-
+        //get profile pic for current user
         StorageReference profileRef = storageReference.child("users/" + firebaseAuth.getCurrentUser().getUid() + "/profile.jpg");
         profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
@@ -84,6 +85,7 @@ public class EditProfile extends AppCompatActivity {
             }
         });
 
+        //open gallery to change picture
         editpic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -93,6 +95,7 @@ public class EditProfile extends AppCompatActivity {
             }
         });
 
+        //save new information to firebase
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -154,7 +157,7 @@ public class EditProfile extends AppCompatActivity {
 
     }
 
-
+    //upload new profile picture
     private void upload(Uri imageUri) {
 
         final StorageReference fileRef = storageReference.child("users/" + firebaseAuth.getCurrentUser().getUid() + "/profile.jpg");

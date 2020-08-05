@@ -73,6 +73,7 @@ public class Profile extends AppCompatActivity {
         storageReference = FirebaseStorage.getInstance().getReference();
         firebaseUser = firebaseAuth.getCurrentUser();
 
+        //get user profile image
         StorageReference profileRef = storageReference.child("users/" + firebaseAuth.getCurrentUser().getUid() + "/profile.jpg");
         profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
@@ -81,6 +82,7 @@ public class Profile extends AppCompatActivity {
             }
         });
 
+        //get user details
         userId = firebaseAuth.getCurrentUser().getUid();
         DocumentReference documentReference = firestore.collection("users").document(userId);
         documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
@@ -91,7 +93,7 @@ public class Profile extends AppCompatActivity {
             }
         });
 
-
+        //reset password
         resetPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -122,97 +124,89 @@ public class Profile extends AppCompatActivity {
                         });
                     }
 
-                    });
+                });
 
-                        resetDialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-
-                            }
-                        });
-
-                        final AlertDialog alertDialog = resetDialog.create();
-                        alertDialog.show();
-
-
-                        alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                Boolean wantToCloseDialog = (changepassword.getText().toString().trim().isEmpty());
-                                // if EditText is empty disable closing on positive button
-                                if (!wantToCloseDialog)
-                                    alertDialog.dismiss();
-                            }
-                        });
-
+                resetDialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
 
                     }
                 });
 
+                final AlertDialog alertDialog = resetDialog.create();
+                alertDialog.show();
 
-                Button signout = (Button) findViewById(R.id.signout);
-                signout.setOnClickListener(new View.OnClickListener() {
+
+                alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
-                        FirebaseAuth.getInstance().signOut();
-
-                        Intent intent = new Intent(Profile.this, MainActivity.class);
-                        startActivity(intent);
-
-                        Toast.makeText(Profile.this, "You have been logged out", Toast.LENGTH_SHORT).show();
-
-
-                    }
-                });
-
-
-                bottomNavigation = findViewById(R.id.navigationView);
-                bottomNavigation.setSelectedItemId(R.id.navigation_home);
-
-                bottomNavigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-                        int id = item.getItemId();
-                        switch (id) {
-                            case R.id.navigation_quiz:
-                                Intent intent3 = new Intent(Profile.this, LearningEntry.class);
-                                startActivity(intent3);
-                                return true;
-                            case R.id.navigation_forum:
-                                Intent intent1 = new Intent(Profile.this, PostFeed.class);
-                                startActivity(intent1);
-                                return true;
-                        }
-                        return false;
-                    }
-                });
-
-
-                changeProfile.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        Intent i = new Intent(v.getContext(),EditProfile.class);
-                        i.putExtra("name" , name.getText().toString());
-                        i.putExtra("email" ,email.getText().toString());
-
-
-                        startActivity(i);
-
-
-
-
+                        Boolean wantToCloseDialog = (changepassword.getText().toString().trim().isEmpty());
+                        if (!wantToCloseDialog)
+                            alertDialog.dismiss();
                     }
                 });
 
 
             }
+        });
+
+        //logout user
+        Button signout = (Button) findViewById(R.id.signout);
+        signout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                FirebaseAuth.getInstance().signOut();
+
+                Intent intent = new Intent(Profile.this, MainActivity.class);
+                startActivity(intent);
+
+                Toast.makeText(Profile.this, "You have been logged out", Toast.LENGTH_SHORT).show();
 
 
+            }
+        });
+
+        //navigate to other activities
+        bottomNavigation = findViewById(R.id.navigationView);
+        bottomNavigation.setSelectedItemId(R.id.navigation_home);
+        bottomNavigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                int id = item.getItemId();
+                switch (id) {
+                    case R.id.navigation_quiz:
+                        Intent intent3 = new Intent(Profile.this, LearningEntry.class);
+                        startActivity(intent3);
+                        return true;
+                    case R.id.navigation_forum:
+                        Intent intent1 = new Intent(Profile.this, PostFeed.class);
+                        startActivity(intent1);
+                        return true;
+                }
+                return false;
+            }
+        });
+
+        //pass data to editprofile activity
+        changeProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent i = new Intent(v.getContext(), EditProfile.class);
+                i.putExtra("name", name.getText().toString());
+                i.putExtra("email", email.getText().toString());
 
 
+                startActivity(i);
+
+
+            }
+        });
+
+
+    }
 
 
 }

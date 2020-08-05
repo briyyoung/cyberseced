@@ -43,7 +43,7 @@ public class LearningDetail extends YouTubeBaseActivity {
         playerView = findViewById(R.id.Vidview);
         play = findViewById(R.id.play);
 
-
+        //play youtube video
         play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,29 +55,24 @@ public class LearningDetail extends YouTubeBaseActivity {
         Intent intent = getIntent();
         module = Modules.getModules(intent.getStringExtra(ARG_NAME));
 
-
+        //set category for quiz based on module name
         if (intent.getStringExtra(ARG_NAME).equals("Social Engineering Attacks")) {
             System.out.println(intent.getStringExtra(ARG_NAME));
             CAT = 1;
         } else if (intent.getStringExtra(ARG_NAME).equals("Psychology Based Attacks")) {
             CAT = 2;
-
         } else if (intent.getStringExtra(ARG_NAME).equals("Stay safe online")) {
             CAT = 3;
-
         } else if (intent.getStringExtra(ARG_NAME).equals("Work from Home")) {
-
             CAT = 4;
         } else if (intent.getStringExtra(ARG_NAME).equals("Best practices")) {
             CAT = 5;
-
         } else if (intent.getStringExtra(ARG_NAME).equals("Physical Security")) {
-
             CAT = 6;
         }
 
 
-        // add image based on name
+        // add image based on module
         cImage = findViewById(R.id.Info);
         int graphic = module.getGraphic();
         cImage.setImageResource(graphic);
@@ -86,7 +81,7 @@ public class LearningDetail extends YouTubeBaseActivity {
             @Override
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
 
-
+                //load video based on module
                 if (CAT == 1) {
                     youTubePlayer.loadVideo("Vo1urF6S4u0");
                 } else if (CAT == 2) {
@@ -113,7 +108,7 @@ public class LearningDetail extends YouTubeBaseActivity {
         Button TakeQuiz = (Button) findViewById(R.id.QuizBtn);
 
 
-        //new activity
+        //new quiz activity
         TakeQuiz.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
 

@@ -17,7 +17,7 @@ public class MoreInfo extends AppCompatActivity {
         Button Exit = (Button) findViewById(R.id.exit);
 
 
-
+        //more info page after quiz
         Exit.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(MoreInfo.this, LearningEntry.class);

@@ -26,6 +26,7 @@ public class LearningHome extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        //pass to module page based on user click
         Intent intent = getIntent();
         String moduleName = intent.getStringExtra(LearningEntry.CHOICE);
         launchmodule(moduleName);

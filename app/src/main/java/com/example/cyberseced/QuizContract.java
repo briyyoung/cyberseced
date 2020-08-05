@@ -13,6 +13,7 @@ import android.provider.BaseColumns;
 public final class QuizContract {
 
     private QuizContract(){}
+    //create sql tables
 
     public static class CategoryTable implements  BaseColumns{
         public static final String TABLE_NAME = "quiz_cats";

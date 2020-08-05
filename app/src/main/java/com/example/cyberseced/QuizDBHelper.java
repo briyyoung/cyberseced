@@ -29,6 +29,7 @@ public class QuizDBHelper extends SQLiteOpenHelper {
         super(context, DATABASE_NAME, null, DATABASE_VER);
     }
 
+    //create tables
     @Override
     public void onCreate(SQLiteDatabase db) {
         this.db = db;
@@ -58,6 +59,7 @@ public class QuizDBHelper extends SQLiteOpenHelper {
 
     }
 
+    //change table if version changes
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + QuizContract.CategoryTable.TABLE_NAME);
@@ -72,7 +74,7 @@ public class QuizDBHelper extends SQLiteOpenHelper {
         db.setForeignKeyConstraintsEnabled(true);
     }
 
-
+    //populate category table
     private void fillCategoriesTable() {
         QuizCategories c1 = new QuizCategories("Social_Engineering");
         addQuizCategories(c1);
@@ -94,7 +96,7 @@ public class QuizDBHelper extends SQLiteOpenHelper {
         db.insert(QuizContract.CategoryTable.TABLE_NAME, null, cv);
     }
 
-
+    //populate question table
     private void fillQuestionsTable() {
         QuizQuestions q1 = new QuizQuestions("When working from home, you must be aware of…", "Desk space", "Computer battery", "Antivirus Software", "Phishing and Whaling", 4, QuizCategories.Work_from_home);
         addQuestion(q1);
@@ -163,6 +165,7 @@ public class QuizDBHelper extends SQLiteOpenHelper {
         addQuestion(q30);
     }
 
+    //insert questions
     private void addQuestion(QuizQuestions quizQuestions) {
         ContentValues cv = new ContentValues();
         cv.put(QuizContract.QuestionTable.COLUMN, quizQuestions.getQuestion());
@@ -175,7 +178,7 @@ public class QuizDBHelper extends SQLiteOpenHelper {
         db.insert(QuizContract.QuestionTable.TABLE_NAME, null, cv);
     }
 
-
+    //get all categories
     public List<QuizCategories> getAllCategories(){
         List<QuizCategories> categoriesList = new ArrayList<>();
         db = getReadableDatabase();
@@ -194,6 +197,7 @@ public class QuizDBHelper extends SQLiteOpenHelper {
 
     }
 
+    //get questions
     public List<QuizQuestions> getAllQuestions() {
         List<QuizQuestions> quizQuestionsList = new ArrayList<>();
         db = getReadableDatabase();
@@ -218,7 +222,7 @@ public class QuizDBHelper extends SQLiteOpenHelper {
         return quizQuestionsList;
     }
 
-
+    //get questions with categories
     public ArrayList<QuizQuestions> getQuestions (int catID){
         ArrayList<QuizQuestions> quizQuestionsArrayList = new ArrayList<>();
         db = getReadableDatabase();

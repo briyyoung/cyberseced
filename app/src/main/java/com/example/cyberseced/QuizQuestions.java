@@ -1,6 +1,7 @@
 package com.example.cyberseced;
 
 public class QuizQuestions {
+   //model for question table
     private String question;
     private String optionA;
     private String optionB;
@@ -9,6 +10,7 @@ public class QuizQuestions {
     private int answer;
     private int catID;
 
+    //constructors
     public QuizQuestions(){}
 
     public QuizQuestions(String question, String optionA, String optionB, String optionC, String optionD, int answer, int catID) {
@@ -22,7 +24,7 @@ public class QuizQuestions {
 
     }
 
-
+    //getters and setters
     public String getQuestion() {
         return question;
     }

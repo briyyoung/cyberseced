@@ -40,18 +40,13 @@ public class LearningAdapter extends RecyclerView.Adapter<LearningAdapter.MainAc
     public MainActivityViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.learning_adapter, parent, false);
         return new MainActivityViewHolder(v, mListener);
-
-
     }
 
     @Override
     public void onBindViewHolder(@NonNull MainActivityViewHolder holder, int position) {
         Modules modules = modulesList.get(position);
-//        holder.moduleName.setText(modules.getName());
-
         int icon = holder.itemView.getContext().getResources().getIdentifier("module_" + modules.getmImage(), "drawable", "com.example.cyberseced");
         holder.moduleIcon.setImageResource(icon);
-
     }
 
     @Override
@@ -69,8 +64,6 @@ public class LearningAdapter extends RecyclerView.Adapter<LearningAdapter.MainAc
             moduleIcon = itemView.findViewById(R.id.LearningPicList);
             mListener = listener;
             itemView.setOnClickListener(this);
-
-
         }
 
         @Override

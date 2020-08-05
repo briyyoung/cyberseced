@@ -24,7 +24,9 @@ private static int splash_time = 4000;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.splash);
+
+        //create splash page
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

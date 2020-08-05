@@ -12,7 +12,7 @@ public class Modules {
     private int description;
     private int graphic;
 
-
+    //getters and setters
     public String getName() {
         return name;
     }
@@ -45,7 +45,7 @@ public class Modules {
         this.graphic = graphic;
     }
 
-
+    //constructor
     public Modules(String name, int mImage, int description, int graphic) {
         this.name = name;
         this.mImage = mImage;
@@ -63,6 +63,7 @@ public class Modules {
         return null;
     }
 
+    //fill in data for modules
     public static ArrayList<Modules> getModules() {
         ArrayList<Modules> modules = new ArrayList<>();
         modules.add(new Modules("Social Engineering Attacks", 1, 1, R.drawable.graphic1));

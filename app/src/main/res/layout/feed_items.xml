@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bac"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
+    app:cardBackgroundColor="#FFF3E0">
 
-    >
-
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
@@ -21,17 +22,23 @@
             android:background="@color/colorGradientCenter"
             android:text="Post Title"
             android:textColor="#000"
-            android:textStyle="bold" />
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="5dp" />
 
         <TextView
             android:id="@+id/post_desc_txtview"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:layout_margin="5dp"
+            android:layout_marginTop="8dp"
             android:background="@color/colorPrimaryDark"
-            android:text="Post Description" />
+            android:text="Post Description"
+            app:layout_constraintTop_toBottomOf="@+id/post_title_txtview"
+            tools:layout_editor_absoluteX="5dp" />
 
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>
